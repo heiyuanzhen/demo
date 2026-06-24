@@ -1,0 +1,26 @@
+<side-slip catch:delete="deleteItem" data-id="{{talent.itemid}}"
+  data-index="{{index}}" isDelete="{{isDelete}}">
+  <view class="scroll-content" style="{{scrollContentStyle}}">
+    <view class="talent-content" id="scrollone" >
+      <view class="tanlent-one">
+        <view class="tanlent-name" wx:if="{{talent.truename}}">{{talent.truename}}</view>
+        <view class="tanlent-cate" wx:if="{{talent.catid}}">{{talent.catid}}</view>
+        <view class="tanlent-status" wx:if="{{talent.situation}}">{{talent.situation}}</view>
+      </view>
+      <view class="tanlent-two">
+        <text wx:if="{{talent.gender && talent.gender != '不限'}}">{{talent.gender}}</text>
+        <!-- <text wx:if="{{talent.age}}">{{talent.age}}</text> -->
+        <text wx:if="{{talent.education && talent.education != '不限'}}">{{talent.education}}</text>
+        <text wx:if="{{talent.experience && talent.experience != '不限'}}">{{talent.experience == '0年' ? '经验不限' : talent.experience}}</text>
+        <text wx:if="{{talent.xinzi && talent.xinzi != '不限'}}">{{talent.xinzi}}</text>
+      </view>
+      <view class="tanlent-three">
+        <text wx:if="{{talent.edittime}}">更新时间：{{talent.edittime}}</text>
+        <view wx:if="{{isShowstar}}" class="cancel-btn" catchtap="cancelBtn">
+          取消收藏
+        </view>
+      </view>
+    </view>
+  </view>
+</side-slip>
+

@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {},
+  "navigationBarTitleText": "附件简历",
+  "enablePullDownRefresh": true
+}

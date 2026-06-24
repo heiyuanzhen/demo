@@ -1,0 +1,84 @@
+.talent-content{
+  padding: 40rpx;
+  width: 750rpx;
+  box-sizing: border-box;
+}
+.tanlent-one{
+  display: flex;
+  align-items: center;
+}
+.tanlent-name{
+  font-size: 36rpx;
+  color: #444444;
+  font-weight: bold;
+}
+.tanlent-cate{
+  height: 33rpx;
+  line-height: 33rpx;
+  font-size: 24rpx;
+  text-align: center;
+  background: rgba(0,195,108, 0.1);
+  color: #26BA8D;
+  margin-left: 30rpx;
+  padding: 3rpx 15rpx;
+}
+.tanlent-status{
+  font-size: 22rpx;
+  color: #A8ADBF;
+  margin-left: 30rpx;
+}
+.tanlent-two{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 30rpx;
+}
+.tanlent-two text{
+  padding-right: 20rpx;
+  margin-top: 20rpx;
+}
+.tanlent-two text + text{
+  padding-left: 20rpx;
+  border-left: 1rpx solid #ececec;
+  color: #6D7278;
+}
+.tanlent-three{
+  font-size: 24rpx;
+  color: #A8ADBF;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel-btn{
+  border: 1rpx solid #A8ADBF;
+  background-color: #fff;
+  color: #A8ADBF;
+  border-radius: 24rpx;
+  padding: 8rpx 25rpx;
+}
+
+.delete-one{
+  background-color: #F56C6C;
+  width: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delete-one image{
+  width: 80rpx;
+}
+
+.scroll-class{
+  width: 750rpx;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.scroll-content{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}

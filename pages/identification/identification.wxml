@@ -1,0 +1,12 @@
+<!--身份确认-->
+<view class="choose">
+  <view class="ch-item">
+    <image src="https://cdn1.chinayarn.com/dsc/2020-12/img/rvVmAphpd0n7xL1608605491201222.png" bindtap="goindex" data-index="1"/>
+    <view class="currentText" wx:if="{{currentTab == 1}}">(当前身份)</view>
+  </view>
+  <view class="ch-item">
+    <image src="https://cdn1.chinayarn.com/dsc/2020-12/img/ph99Ephp08AcIS1608605474201222.png" bindtap="goindex" data-index="2"/>
+    <view class="currentText" wx:if="{{currentTab == 2}}">(当前身份)</view>
+  </view>
+</view>
+

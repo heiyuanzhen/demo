@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "talent": "/components/ARencaiduan/talent/talent",
+    "IndexComp": "/components/IndexComp/IndexComp",
+    "banners":"/components/banners/banners"
+  }
+}

@@ -1,0 +1,15 @@
+<block wx:if="{{type == 'fixed'}}">
+  <view class="fixed-btn btn-bg" style="background-color: {{bgc}}">
+    <button class="btn-primary" style="{{style}}">
+      <slot>{{value}}</slot>
+    </button>
+  </view>
+</block>
+
+<block wx:if="{{type == 'normal'}}">
+  <view class="normal-btn btn-bg" style="background-color: {{bgc}}">
+    <button class="btn-primary" style="{{style}}">
+      <slot>{{value}}</slot>
+    </button>
+  </view>
+</block>

@@ -1,0 +1,21 @@
+<view class="top-header">
+  <view class="h-title">全部岗位</view>
+  <image src="https://cdn1.chinayarn.com/dsc/2020-11/img/Pq1pOphpCxCmeo1604540282201105.png" class="h-icon" />
+</view>
+
+<view class="resume-list">
+  <block wx:for="{{resumes}}" wx:key="index">
+    <view class="resume-item {{(index+1) % 2 == 0 ? 'resume-item_on' : ''}}">
+      <view class="r-name">
+        {{item.name}}
+      </view>
+      <view class="r-center">
+        应聘岗位：{{item.ypgw}}
+      </view>
+      <view class="r-bottom">
+        {{item.sj}}
+      </view>
+    </view>
+    <view class="border-b"></view>
+  </block>
+</view>

@@ -1,0 +1,14 @@
+<view class="container">
+  <block wx:if="{{postItems.length > 0}}">
+    <block wx:for="{{postItems}}" wx:for-item="postItem">
+      <postItem bindtap="gopath" data-id="{{postItem.itemid}}" binddeleteEvent="deleteItem" isDelete="{{true}}" data-url="/pages/ARencaiduan/postItemDetail/postItemDetail" postItem="{{postItem}}"></postItem>
+      <view class="bottom-time">
+        {{postItem.p_time}}
+      </view>
+      <view style="border-bottom: 20rpx solid #f6f6f6;"></view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="nomre">暂无数据...</view>
+  </block>
+</view>

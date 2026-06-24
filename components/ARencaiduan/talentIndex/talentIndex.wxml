@@ -1,0 +1,68 @@
+<scroll-view style="width:750rpx;height:{{vHeight}};" scroll-top="{{scrolltopValue}}" scroll-y="{{true}}" bindscrolltolower="scrolltolower" bindscroll="scrollView" bindrefresherrefresh="pulldownrefresh" refresher-enabled="{{true}}" refresher-triggered="{{isTriggerEnd}}">
+
+	<view class="banner">
+		<banners banner="{{banner}}"></banners>
+	</view>
+
+	<IndexComp type="search" title="想找什么工作？" placeholder="想找什么工作？" bindhandlesearch="searchPost" />
+
+	<!-- <view class="job-hunting" wx:if="{{jobhuntings.length > 0}}">
+    <block wx:for="{{jobhuntings}}" wx:key="index">
+      <view class="jobhunting-item" bind:tap="clickJobhuntingIndex" data-index="{{index + 1}}" data-id="{{item.id}}">
+        <view class="job-text {{currentJobhuntingIndex == (index + 1) ?  'job-text_on' : ''}}">{{item.title}}</view>
+      </view>
+    </block>
+  </view> -->
+	<view class="con-container">
+		<view class="con-wrapper">
+			<view class="content-header header-fixed">
+				<view class="tab-lists">
+					<view class="tab-item {{currentIndex == 1 ? 'tab-item_on' : null}}" bindtap="tabItemClick" data-index="1">推荐
+					</view>
+					<view class="tab-item {{currentIndex == 2 ? 'tab-item_on' : null}}" bindtap="tabItemClick" data-index="2">最新
+					</view>
+					<view class="tab-item {{currentIndex == 3 ? 'tab-item_on' : null}}" bindtap="tabItemClick" data-index="3">同城
+					</view>
+				</view>
+				<view class="tab-order">
+					<!--
+            <view class="order-item" bindtap="gopath" data-url="/pages/selectCity/selectCity">
+              杭州
+              <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="order-img"/>
+            </view>
+          -->
+					<view class="order-item" bindtap="gopath" data-url="/pages/selectQuery/selectQuery" wx:if="{{!isShowCancelQuery}}">
+						筛选
+						<image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="order-img" />
+					</view>
+					<view class="order-item" bindtap="cancelQuery" wx:else>
+						取消筛选
+						<image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="order-img" />
+					</view>
+				</view>
+			</view>
+			<view class="talent-list">
+				<block wx:for="{{postItems}}" wx:for-item="postItem" wx:key="index">
+					<!--
+            <talent bindtap="gopath" data-id="{{talent.itemid}}" data-url="/pages/talentDetail/talentDetail" talent="{{talent}}"></talent>
+          -->
+					<postItem bindtap="gopath" data-id="{{postItem.itemid}}" data-url="/pages/ARencaiduan/postItemDetail/postItemDetail" postItem="{{postItem}}"></postItem>
+					<view class="darkeee"></view>
+				</block>
+				<view class="nomore">{{loadingText}}</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+
+
+<!-- <view class="mask_div" catchtouchmove='true' wx:if="{{poster}}">
+	<view class="dialog">
+		<image src="https://cdn1.chinayarn.com/dsc/2021-12/img/uQFq0phpx3ImZP1639035661211209.png" bindtap="getOrderDetail" style="width:470rpx;height:630rpx;" mode="widthFix" bindtap="goVip" />
+		<image src="https://cdn1.chinayarn.com/xcx/img2/index/222.png" class="closeIcon" mode="widthFix" bindtap="activeClose" />
+	</view>
+</view> -->
+
+<view class="fixed-btn" wx:if="{{isShowGoTop}}" bindtap="scrollTop">
+	<image src="https://cdn1.chinayarn.com/q7yeMRURixA0lr93GecfKITWClgsbpcuNuAWbrc6.png" class="fixed-img" />
+</view>

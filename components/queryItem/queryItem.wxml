@@ -1,0 +1,12 @@
+<view class="query-item">
+  <view class="query-title">{{queryItem.name}}</view>
+  <view class="item-query_list">
+    <block wx:for="{{queryItem.childlist}}" wx:key="index">
+      <view class="item-value {{item.isOn ? 'item-value_on' : 'item-value_normal'}}"
+            bindtap="clickItem"
+            data-id="{{item.id}}">
+            {{item.name}}
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {
+    "postItem": "/components/AQiyeduan/postItem/postItem"
+  },
+  "navigationBarTitleText": "招聘岗位",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#ffffff"
+}

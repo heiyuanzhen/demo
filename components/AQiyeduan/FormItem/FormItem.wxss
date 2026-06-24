@@ -1,0 +1,155 @@
+.form-item{
+  /* overflow: hidden; */
+  margin: 20rpx 0;
+}
+.form-title{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* position: relative; */
+}
+.form-text{
+  font-size: 32rpx;
+  color: #444444;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.form-require{
+  color: #F56C6C;
+  font-size: 28rpx;
+}
+.form-inp{
+  width: 99%;
+  height: 90rpx;
+  border: 2rpx solid #abadbf;
+  border-radius: 7rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  line-height: 80rpx;
+}
+.form-area{
+  width: 670rpx;
+  border: 2rpx solid #abadbf;
+  border-radius: 7rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  
+}
+.in-p{
+  font-size: 30rpx;
+  height: 80rpx;
+  color: #444444;
+}
+.in-a{
+  width: 100%;
+  height: 200rpx;
+}
+.in-icon{
+  width: 20rpx;
+  height: 12rpx;
+  margin-right: 30rpx;
+}
+
+.place-class_on{
+  color: #444444 !important;
+  font-size: 28rpx;
+}
+.place-class{
+  color: #abadbf;
+  font-size: 28rpx;
+}
+picker{
+  overflow: hidden;
+  height: 100%;
+}
+picker view{
+  width: 120%;
+}
+
+.fw{
+  font-weight: bold;
+}
+
+
+.form-title_edit{
+  font-size: 32rpx;
+  color: #444444;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.form-inp_edit picker{
+  flex: 1;
+  width: 120%;
+}
+.form-inp_edit{
+  width: 99%;
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  line-height: 80rpx;
+}
+.form-item_edit{
+  border-bottom: 2rpx solid #ececec;
+  padding: 30rpx 0 20rpx 0;
+}
+
+.inp-salary{
+  width: 220rpx;
+  font-size: 30rpx;
+  height: 80rpx;
+}
+
+.form-inp_edit_salary{
+  width: 99%;
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+}
+
+.dark-text_eee{
+  color: #abadbf;
+  font-size: 28rpx;
+}
+
+.border-bottom{
+  border-bottom: 2rpx solid #ececec;
+}
+
+.form-inp picker{
+  width: 100%;
+}
+.form-inp picker view{
+  width: 110%;
+}
+
+.text-num{
+  position: absolute;
+  right: 0;
+  color: #bbb;
+  font-size: 24rpx;
+}
+
+.textArea{
+  color: #abadbf;
+  font-size: 28rpx;
+}
+.textstyle{
+  font-size: 32rpx;
+  color: #444444;
+  font-weight: bold;
+}

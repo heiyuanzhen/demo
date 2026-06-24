@@ -1,0 +1,22 @@
+<view class="talent-list">
+		<block wx:for="{{postItems}}" wx:for-item="postItem" wx:key="index">
+				<postItem bindtap="gopath" data-id="{{postItem.id}}" binddeleteEvent="deleteItem" data-url="/pages/ARencaiduan/postItemDetail/postItemDetail" postItem="{{postItem}}" isDelete="{{true}}" isEdit="{{true}}" data-id="{{postItem.itemid}}" ></postItem>
+				<view class="darkeee"></view>
+		</block>
+		<view class="nomore">暂无更多</view>
+</view>
+<!-- <view
+ class="add-post"
+ bindtap="gopath"
+ data-url="/pages/AQiyeduan/addPost/addPost"
+>
+	<image src="https://cdn1.chinayarn.com/dsc/2020-11/img/v6J9Iphp0G2roJ1604391669201103.png" />
+</view> -->
+<view class="add-post_bottom">
+		<view class="add-post_btn" style="opacity: 0.8;" wx:if="{{userinfo.isVip==0 && postItems.length >= 3}}">
+				最多只能添加三个岗位
+		</view>
+		<view class="add-post_btn" bind:tap="gopath" data-url="/pages/AQiyeduan/addPost/addPost" wx:else>
+				添加岗位
+		</view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {
+  "side-slip": "/components/side-slip/index"
+},
+  "navigationBarTitleText": "求职意向",
+  "enablePullDownRefresh": true
+}

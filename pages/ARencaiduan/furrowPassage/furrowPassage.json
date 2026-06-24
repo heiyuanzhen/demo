@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {
+    "postItem": "/components/AQiyeduan/postItem/postItem"
+  },
+  "navigationBarTitleText": "沟通过的职位"
+}

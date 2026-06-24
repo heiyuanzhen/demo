@@ -1,0 +1,161 @@
+@import '../../AQiyeduan/talentDetail/talentDetail.wxss';
+
+.selectresume {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 32rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #444444;
+}
+
+.resume-header {
+  text-align: center;
+  padding: 25rpx 0;
+}
+
+.resume-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15rpx 45rpx;
+  border-bottom: 2rpx solid #ececee;
+
+}
+
+.resume-item:last-child {
+  border-bottom: 2rpx solid transparent;
+}
+
+.i-left image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.i-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20rpx;
+}
+
+.i-name {
+  font-size: 30rpx;
+}
+
+.i-time {
+  color: #a8adbf;
+  font-size: 28rpx;
+}
+
+.i-choose image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.send-resume__btn {
+  margin-top: 100rpx;
+  margin-bottom: 8rpx;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  border-radius: 70rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  background-color: #26BA8D;
+  color: #fff;
+}
+
+.send-btn__drak {
+  opacity: 0.7 !important;
+}
+
+.overside {
+  background-color: #fff;
+  padding-bottom: 100rpx;
+}
+
+
+.dialog-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-wrapper.poster-dialog {
+  z-index: -1;
+  display: none;
+}
+
+.dialog-wrapper.poster-dialog.active {
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+}
+
+.flex-worp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.poster-box {
+  width: 610rpx;
+  height: 840rpx;
+  position: relative;
+
+}
+
+.imgs {
+  width: 610rpx;
+  height: 840rpx;
+}
+
+
+
+.btn-close {
+  margin-top: 20rpx;
+  width: 86rpx;
+  height: 86rpx;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.coloesimg {
+  position: absolute;
+  top: -30rpx;
+  right: -20rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.canvas-box {
+  position: fixed;
+  top: 1000px;
+  left: 1000px;
+  z-index: -10;
+}
+
+.gotoSign {
+  background-color: #26BA8D;
+  width: 250rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  font-size: 30rpx;
+}

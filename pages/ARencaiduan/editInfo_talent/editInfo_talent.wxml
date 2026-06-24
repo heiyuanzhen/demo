@@ -1,0 +1,272 @@
+<view class="container_personal">
+	<!-- 填写的form表单start -->
+	<view class="form-container">
+		<view class="form-item form-item-lr" bind:tap="uploadAvatar">
+			<view class="icon-text">
+				<view>点击上传免冠照片</view>
+				<view style="color: #F56C6C;display: inline;">*</view>
+			</view>
+			<view class="icon-img">
+				<image src="{{formdata.thumb ? formdata.thumb : 'https://cdn1.chinayarn.com/dsc/2020-09/img/Y0OhCphpPbz6Iq1599642674200909.png'}}" />
+			</view>
+		</view>
+		<FormItem
+		 isRequire="{{rules['catid'].isRequire}}"
+		 type="edit-select"
+		 label="岗位类别"
+		 placeholder="{{rules['catid'].placeholder}}"
+		 level="three"
+		 bindthreeLevelPickerChange="threeLevelPickerChange"
+		 rangerObj="{{postselectData.catid}}"
+		 styleStr="width: 670rpx;"
+		 threeLevelLabel="{{jobdetail.catname || ''}}"
+		 threeLevelValue="{{jobdetail.catid || ''}}"
+		/>
+		<FormItem
+		 isRequire="{{rules['truename'].isRequire}}"
+		 bind:InputTextChange="textInputChange"
+		 key="truename"
+		 type="edit-text"
+		 label="真实姓名"
+		 placeholder="{{rules['catid'].placeholder}}"
+		 styleStr="width: 670rpx;"
+		 value="{{formdata.truename}}"
+		/>
+		<FormItem type="edit-address" bindaddresschange="addresschange" address="{{jobdetail.address}}" />
+		<FormItem
+		 isRequire="{{rules['minsalary'].isRequire || rules['maxsalary'].isRequire}}"
+		 bind:InputTextChange="editSalaryInputChange"
+		 key="idcard"
+		 type="edit-salary"
+		 label="期望薪资"
+		 styleStr="width: 670rpx;"
+		 minsalary="{{formdata.minsalary}}"
+		 maxsalary="{{formdata.maxsalary}}"
+		/>
+		<FormItem
+		 isRequire="{{rules['situation'].isRequire}}"
+		 placeholder="{{rules['situation'].placeholder}}"
+		 type="edit-select"
+		 label="求职状态"
+		 key="situation"
+		 bindtwolevelPickerChange="twolevelPickerChange"
+		 rangeArr="{{postselectData.situation}}"
+		 oneLevelId="{{jobdetail.situation}}"
+		 styleStr="width: 670rpx;"
+		/>
+		<FormItem
+		 isRequire="{{rules['experience'].isRequire}}"
+		 placeholder="{{rules['experience'].placeholder}}"
+		 bind:InputTextChange="textInputChange"
+		 key="experience"
+		 type="edit-text"
+		 label="工作经验"
+		 styleStr="width: 670rpx;"
+		 value="{{formdata.experience}}"
+		 textRight="年"
+		/>
+		<FormItem
+		 isRequire="{{rules['education'].isRequire}}"
+		 type="edit-select"
+		 label="学历"
+		 placeholder="{{rules['education'].placeholder}}"
+		 key="education"
+		 bindtwolevelPickerChange="twolevelPickerChange"
+		 rangeArr="{{postselectData.education}}"
+		 oneLevelId="{{jobdetail.education}}"
+		 styleStr="width: 670rpx;"
+		/>
+		<FormItem
+		 isRequire="{{rules['type'].isRequire}}"
+		 type="edit-select"
+		 label="工作性质"
+		 placeholder="{{rules['type'].placeholder}}"
+		 key="type"
+		 bindtwolevelPickerChange="twolevelPickerChange"
+		 rangeArr="{{postselectData.gzxz}}"
+		 oneLevelId="{{jobdetail.type}}"
+		 styleStr="width: 670rpx;"
+		/>
+		<FormItem
+		 isRequire="{{rules['gender'].isRequire}}"
+		 type="edit-select"
+		 label="性别"
+		 placeholder="{{rules['gender'].placeholder}}"
+		 key="gender"
+		 bindtwolevelPickerChange="twolevelPickerChange"
+		 rangeArr="{{postselectData.gender}}"
+		 oneLevelId="{{jobdetail.gender}}"
+		 styleStr="width: 670rpx;"
+		/>
+		<FormItem
+		 isRequire="{{rules['marriage'].isRequire}}"
+		 type="edit-select"
+		 label="婚姻状况"
+		 placeholder="{{rules['marriage'].placeholder}}"
+		 key="marriage"
+		 bindtwolevelPickerChange="twolevelPickerChange"
+		 rangeArr="{{postselectData.hyzk}}"
+		 oneLevelId="{{jobdetail.marriage}}"
+		 styleStr="width: 670rpx;"
+		/>
+		<div class="{{isshowBottom ? 'show' : 'hidden'}}">
+			<FormItem
+			 type="edit-birthday"
+			 isRequire="{{rules['birthday'].isRequire}}"
+			 bindbirthdayChange="birthdayChange"
+			 birthday="{{jobdetail.birthday}}"
+			/>
+			<FormItem
+			 isRequire="{{rules['mobile'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="mobile"
+			 type="edit-text"
+			 label="联系手机"
+			 placeholder="{{rules['mobile'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.mobile}}"
+			/>
+			<FormItem
+			 isRequire="{{rules['email'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="email"
+			 type="edit-text"
+			 label="电子邮件"
+			 placeholder="{{rules['email'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.email}}"
+			/>
+			<FormItem
+			 isRequire="{{rules['skill'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="skill"
+			 type="edit-text"
+			 label="专业特长"
+			 placeholder="{{rules['skill'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.skill}}"
+			/>
+			<!-- <FormItem
+			 isRequire="{{rules['height'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="height"
+			 type="edit-text"
+			 label="身高"
+			 placeholder="{{rules['height'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.height}}"
+			/> -->
+			<!-- <FormItem
+			 isRequire="{{rules['weight'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="weight"
+			 type="edit-text"
+			 label="体重"
+			 placeholder="{{rules['weight'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.weight}}"
+			/> -->
+			<!-- <FormItem
+			 isRequire="{{rules['school'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="school"
+			 type="edit-text"
+			 label="毕业院校"
+			 placeholder="{{rules['school'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.school}}"
+			/> -->
+			<!-- <FormItem
+			 isRequire="{{rules['major'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="major"
+			 type="edit-text"
+			 label="所学专业"
+			 placeholder="{{rules['major'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.major}}"
+			/> -->
+			<!-- <FormItem
+			 isRequire="{{rules['language'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="language"
+			 type="edit-text"
+			 label="语言水平"
+			 placeholder="{{rules['language'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.language}}"
+			/> -->
+			<!-- <FormItem
+			 isRequire="{{rules['idcard'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="idcard"
+			 type="edit-text"
+			 label="身份证号"
+			 placeholder="{{rules['idcard'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.idcard}}"
+			/> -->
+			<FormItem
+			 isRequire="{{rules['telephone'].isRequire}}"
+			 bind:InputTextChange="textInputChange"
+			 key="telephone"
+			 type="edit-text"
+			 label="联系电话"
+			 placeholder="{{rules['telephone'].placeholder}}"
+			 styleStr="width: 670rpx;"
+			 value="{{formdata.telephone}}"
+			/>
+			<!-- <FormItem
+		 isRequire="{{rules['addresss'].isRequire}}"
+		 bind:InputTextChange="textInputChange"
+		 key="addresss"
+		 type="edit-text"
+		 label="联系地址"
+		 placeholder="请输入联系地址"
+		 styleStr="width: 670rpx;"
+		 value="{{formdata.addresss}}"
+		/> -->
+			<FormItem
+			 isRequire="{{rules['worklist'].isRequire}}"
+			 bind:textareaChange="textareaChange"
+			 key="worklist"
+			 type="edit-textarea"
+			 label="工作经历"
+			 placeholder="请输入工作经历"
+			 styleStr="width: 670rpx;"
+			 value="{{jobdetail.worklist}}"
+			 key="worklist"
+			 editorid="editor1"
+			/>
+			<FormItem
+			 isRequire="{{rules['stulist'].isRequire}}"
+			 bind:textareaChange="textareaChange"
+			 key="stulist"
+			 type="edit-textarea"
+			 label="学习经历"
+			 placeholder="请输入学习经历"
+			 styleStr="width: 670rpx;"
+			 value="{{jobdetail.stulist}}"
+			 key="stulist"
+			 editorid="editor2"
+			/>
+			<FormItem
+			 isRequire="{{rules['introduce'].isRequire}}"
+			 bind:textareaChange="textareaChange"
+			 key="introduce"
+			 type="edit-textarea"
+			 label="自我鉴定"
+			 placeholder="请输入自我鉴定"
+			 styleStr="width: 670rpx;"
+			 value="{{jobdetail.introduce}}"
+			 key="introduce"
+			 editorid="editor3"
+			/>
+		</div>
+		<view bind:tap="toggleHiddenShow" class="lookmore">{{lookmoreText}}</view>
+	</view>
+	<!-- 填写的form表单end -->
+</view>
+<!-- 提交 -->
+<z-fixbutton bindtap="saveMessage">提交</z-fixbutton>
+

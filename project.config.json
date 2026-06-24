@@ -1,0 +1,283 @@
+{
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "setting": {
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": false,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "useStaticServer": true,
+    "showES6CompileOption": false,
+    "checkInvalidKey": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useCompilerPlugins": false,
+    "ignoreUploadUnusedFiles": true,
+    "condition": false,
+    "compileWorklet": true,
+    "localPlugins": false,
+    "swc": false,
+    "disableSWC": true
+  },
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "setting": {
+      "urlCheck": true,
+      "scopeDataCheck": false,
+      "coverView": true,
+      "es6": false,
+      "postcss": true,
+      "compileHotReLoad": false,
+      "lazyloadPlaceholderEnable": false,
+      "preloadBackgroundData": false,
+      "minified": true,
+      "autoAudits": false,
+      "newFeature": false,
+      "uglifyFileName": false,
+      "uploadWithSourceMap": true,
+      "useIsolateContext": false,
+      "nodeModules": false,
+      "enhance": true,
+      "useMultiFrameRuntime": true,
+      "useApiHook": true,
+      "useApiHostProcess": true,
+      "showShadowRootInWxmlPanel": true,
+      "packNpmManually": false,
+      "packNpmRelationList": [],
+      "minifyWXSS": true,
+      "disableUseStrict": false,
+      "minifyWXML": true,
+      "babelSetting": {
+        "ignore": [],
+        "disablePlugins": [],
+        "outputPath": ""
+      }
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.16.1",
+    "appid": "wx87b54005d14bd03c",
+    "projectname": "%E4%BA%BA%E6%89%8D%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+      "plugin": {
+        "list": []
+      },
+      "game": {
+        "list": []
+      },
+      "gamePlugin": {
+        "list": []
+      },
+      "miniprogram": {
+        "list": [
+          {
+            "id": 0,
+            "name": "人才详情 - 企业端",
+            "pathName": "pages/AQiyeduan/talentDetail/talentDetail",
+            "query": "id=31478",
+            "scene": null
+          },
+          {
+            "id": 2,
+            "name": "地区筛选",
+            "pathName": "pages/selectCity/selectCity",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": 3,
+            "name": "条件筛选",
+            "pathName": "pages/selectQuery/selectQuery",
+            "query": "",
+            "scene": null
+          },
+          {
+            "name": "编辑 - 企业端",
+            "pathName": "pages/AQiyeduan/editInfo_company/editInfo",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "手机号登录页面",
+            "pathName": "pages/phoneLogin/phoneLogin",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "页面首页",
+            "pathName": "pages/pageIndex/pageIndex",
+            "query": "",
+            "scene": null
+          },
+          {
+            "name": "首页 - 个人端",
+            "pathName": "pages/pageIndex/pageIndex",
+            "query": "currentTabbarIndex=2&isBoss=2",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "pages/talentDetail/talentDetail",
+            "pathName": "pages/talentDetail/talentDetail",
+            "query": "id=31478",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "identification",
+            "pathName": "pages/identification/identification",
+            "query": "currentTabbarIndex=2&isBoss=2",
+            "scene": null
+          },
+          {
+            "id": 9,
+            "name": "首页 - 老板端",
+            "pathName": "pages/pageIndex/pageIndex",
+            "query": "currentTabbarIndex=2&isBoss=1",
+            "scene": null
+          },
+          {
+            "id": 10,
+            "name": "职位详情 - 人才端",
+            "pathName": "pages/ARencaiduan/postItemDetail/postItemDetail",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "企业端 收藏和联系的人才",
+            "pathName": "pages/AQiyeduan/starAndContact/starAndContact",
+            "query": "currentTabbarIndex=1&isBoss=1",
+            "scene": null
+          },
+          {
+            "name": "添加岗位 - 企业端",
+            "pathName": "pages/AQiyeduan/addPost/addPost",
+            "query": "id=924",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "resumeRepo",
+            "pathName": "pages/AQiyeduan/resumeRepo/resumeRepo",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": 14,
+            "name": "编辑 - 个人端",
+            "pathName": "pages/ARencaiduan/editInfo_talent/editInfo_talent",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "沟通过的企业 - 个人端",
+            "pathName": "pages/ARencaiduan/furrowPassage/furrowPassage",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "附件简历 - 个人端",
+            "pathName": "pages/ARencaiduan/resumeAttachment/resumeAttachment",
+            "query": "",
+            "scene": null
+          },
+          {
+            "id": -1,
+            "name": "求职意向 - 个人端",
+            "pathName": "pages/ARencaiduan/jobHunting/jobHunting",
+            "query": "",
+            "scene": null
+          },
+          {
+            "name": "添加求职意向 - 个人端",
+            "pathName": "pages/ARencaiduan/addJobHunting/addJobHunting",
+            "query": "huntingItem={\"id\":33,\"userid\":232173,\"openid\":0,\"catid\":5273,\"xinzi\":14,\"type\":2,\"address\":\"浙江省,杭州市,不限\",\"time\":\"2020-11-09 11:44:36\",\"catname\":\"技术类,原料采购,原料采购2\",\"xinzivalue\":\"2-5k\"}",
+            "scene": null
+          },
+          {
+            "name": "当前正在招聘的岗位 - 企业端",
+            "pathName": "pages/AQiyeduan/recruitments/recruitments",
+            "query": "index=1",
+            "scene": null
+          },
+          {
+            "name": "首页 - 企业端",
+            "pathName": "pages/pageIndex/pageIndex",
+            "query": "currentTabbarIndex=1&isBoss=1",
+            "scene": null
+          },
+          {
+            "name": "职位详情",
+            "pathName": "pages/ARencaiduan/postItemDetail/postItemDetail",
+            "query": "id=929",
+            "scene": null
+          },
+          {
+            "name": "修改招聘岗位",
+            "pathName": "pages/AQiyeduan/addPost/addPost",
+            "query": "id=1077",
+            "scene": null
+          },
+          {
+            "name": "沟通过的职位",
+            "pathName": "pages/ARencaiduan/furrowPassage/furrowPassage",
+            "query": "index=3",
+            "scene": null
+          },
+          {
+            "name": "人才信息",
+            "pathName": "pages/AQiyeduan/starAndContact/starAndContact",
+            "query": "",
+            "scene": null
+          }
+        ]
+      }
+    },
+    "editorSetting": {
+      "tabIndent": "insertSpaces",
+      "tabSize": 4
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "appid": "wx87b54005d14bd03c",
+  "libVersion": "3.0.2",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  }
+}

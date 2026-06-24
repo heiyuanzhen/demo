@@ -1,0 +1,140 @@
+page{
+  background-color: #f6f6f6;
+}
+.col-item{
+  padding: 35rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.col-title{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #444444;
+}
+.col-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rig-text{
+  font-size: 28rpx;
+  color: #abadbf;
+  margin-right: 25rpx;
+}
+.rig-img{
+  width: 10rpx;
+  height: 18rpx;
+}
+
+.bg-color{
+  /* height: 100vh; */
+}
+
+.logout-con{
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.logout-btn{
+  width: 60%;
+  background-color: transparent;
+  color: #abadbf;
+  border-radius: 100rpx;
+  border: 2rpx solid #abadbf;
+  margin: 0 auto;
+  font-size: 28rpx;
+}
+
+/* 头部 */
+.top-header{
+  background-color: #26BA8D;
+  width: 100%;
+  color: #FFFFFF;
+  padding-bottom: 18rpx;
+}
+.user-info{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 30rpx 55rpx;
+  box-sizing: border-box;
+}
+.left-view{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+.left-avatar{
+  width: 100rpx; 
+  height: 100rpx;
+  border-radius: 70rpx;
+}
+.center-name{
+  font-size: 40rpx;
+  font-weight: bold;
+  flex: 1;
+  margin-left: 40rpx;
+  background-color: transparent;
+  color: #ffffff;
+  text-align: left;
+}
+
+.center-name::after{
+  border: none;
+}
+.right-edit{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.r-icon{
+  width: 33rpx;
+  height: 33rpx;
+  margin-right: 10rpx;
+}
+.r-text{
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.65);
+}
+.item-three{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.tab-item{
+  width: 33%;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2rpx solid rgba(255, 255, 255, 0.2);
+}
+.tab-item:nth-child(1){
+  border: 2rpx solid transparent;
+}
+.tab-num{
+  font-size: 36rpx;
+  /* font-weight: bold; */
+}
+.tab-text{
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-eee{
+  height: 15rpx;
+  background-color: rgba(246, 246, 246, 1);
+  width: 100%;
+}
+.b-bottom-2{
+  border-bottom: 2rpx solid #ececec;
+}

@@ -1,0 +1,126 @@
+<view class="container_personal">
+	<!-- 填写的form表单start -->
+	<view class="form-container">
+		<view class="form-item form-item-lr" bind:tap="uploadBusiness">
+			<view class="icon-text">
+				<view>营业执照</view>
+				<view>(请保证图片的清晰度)</view>
+			</view>
+			<view class="icon-img">
+				<image src="{{companyinfo.zhizhao || 'https://cdn1.chinayarn.com/dsc/2021-06/img/0LQH4phpOzXnNQ1622714218210603.png'}}" />
+			</view>
+		</view>
+
+		<view class="form-item form-item-lr" bind:tap="uploadAvatar">
+			<view class="icon-text">
+				<text>公司logo</text>
+				<text>(请上传正方形图片)</text>
+			</view>
+			<view class="icon-img">
+				<image src="{{companyinfo.thumb || 'https://cdn1.chinayarn.com/dsc/2020-09/img/Y0OhCphpPbz6Iq1599642674200909.png'}}" />
+			</view>
+		</view>
+
+		<view class="form-item form-primary">
+			<view class="form-label">
+				<view>
+					<text>联系电话</text>
+				</view>
+			</view>
+			<view class="form-value">
+				<input
+				 type="number"
+				 placeholder='请输入手机号'
+				 value="{{companyinfo.telephone}}"
+				 bindinput="changeCompanyInfo"
+				 data-key="telephone"
+				 maxlength="11"
+				/>
+			</view>
+		</view>
+
+		<view class="form-item form-primary">
+			<view class="form-label">
+				<view>
+					<text>公司名称</text>
+					<text style="color: red;">*</text>
+				</view>
+			</view>
+			<view class="form-select">
+				<view class="select-body">
+					<input
+					 type="text"
+					 placeholder='XX市XX有限公司(请填写完整)'
+					 value="{{companyinfo.company}}"
+					 data-key="company"
+					 bindinput="changeCompanyInfo"
+					 style="width: 80%;"
+					/>
+				</view>
+			</view>
+		</view>
+		<view class="form-item form-primary">
+			<view class="form-label">
+				<view>
+					<text>公司地址</text>
+					<text style="color: red;">*</text>
+				</view>
+			</view>
+			<view class="form-value">
+				<input
+				 type="text"
+				 placeholder='请选择详细地址'
+				 value="{{companyinfo.address}}"
+				 bindinput="changeCompanyInfo"
+				 data-key="address"
+				/>
+			</view>
+		</view>
+
+		<view class="form-item">
+			<view class="form-label">
+				<view>
+					<text>主营产品</text>
+				</view>
+				<text>(已输入{{companyinfo.business.length}}/150)</text>
+			</view>
+			<textarea
+			 cols="30"
+			 rows="10"
+			 placeholder="请输入主营产品"
+			 maxlength='100'
+			 placeholder='请输入本公司的主营产品、产品简介'
+			 value="{{companyinfo.business}}"
+			 bindinput="changeCompanyInfo"
+			 data-key="business"
+			 style="height: 300rpx"
+			></textarea>
+		</view>
+		<view class="form-item">
+			<view class="form-label">
+				<text>公司简介</text>
+				<text>(已输入{{companyinfo.introduce.length}}/150)</text>
+			</view>
+
+			<textarea
+			 cols="30"
+			 rows="10"
+			 placeholder='请输入公司的简介信息'
+			 value="{{companyinfo.introduce}}"
+			 data-key="introduce"
+			 bindinput="changeCompanyInfo"
+			 maxlength='100'
+			 style="height: 300rpx"
+			></textarea>
+		</view>
+	</view>
+	<!-- 填写的form表单end -->
+	<!-- 提交 -->
+	<!-- <view class="bottomsub" bindtap="saveMessage">
+		<button class="save-btn">编辑</button>
+	</view> -->
+
+</view>
+
+<z-fixbutton bindtap="saveMessage">提交</z-fixbutton>
+

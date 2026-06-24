@@ -1,0 +1,128 @@
+<view wx:if="{{jobDetail.itemid}}" class="overside">
+  <view style="padding:50rpx 0rpx 10rpx 55rpx">
+    <view style="color: #444444;font-weight:800;font-size:40rpx;min-height:90rpx;line-height:50rpx;white-space:normal;">{{jobDetail.title}} </view>
+  </view>
+  <view class="modlue-item">
+    <view class="modlue-title">
+      <view class="title-icon" />
+      <view class="title-text">岗位要求</view>
+    </view>
+    <view class="form-item">
+      <!-- <view wx:if="{{jobDetail.title}}">岗位名称：{{jobDetail.title}}</view> -->
+      <view wx:if="{{jobDetail.catid}}">岗位类别：{{jobDetail.catid}}</view>
+      <view wx:if="{{jobDetail.education}}">学历：{{jobDetail.education }}</view>
+      <!-- <view wx:if="{{jobDetail.type}}">工作性质：{{jobDetail.type}}</view> -->
+      <!--传的id需要处理-->
+      <view wx:if="{{jobDetail.experience}}">{{jobDetail.experience == '0年' ? '经验不限' : '工作经验：'+jobDetail.experience }}</view>
+      <view wx:if="{{jobDetail.gender}}">性别：{{jobDetail.gender}}</view>
+      <view wx:if="{{jobDetail.age}}">年龄：{{jobDetail.age}}</view>
+      <view wx:if="{{jobDetail.address}}">工作地址：{{jobDetail.address}}</view>
+      <!-- <view wx:if="{{jobDetail.marriage}}">婚姻状况：{{jobDetail.marriage}}</view> -->
+      <!--传的id需要处理-->
+      <view style="color: #2CB38A;font-weight: bold;" wx:if="{{jobDetail.xinzi !== ''}}">薪资：{{jobDetail.xinzi}}</view>
+    </view>
+  </view>
+
+  <view class="modlue-item" wx:if="{{jobDetail.introduce}}">
+    <view class="modlue-title">
+      <view class="title-icon" />
+      <view class="title-text">岗位描述</view>
+    </view>
+    <view class="form-content">
+      <view class="form-content_value">
+        <!-- <text decode="true">{{jobDetail.introduce}}</text> -->
+        <z-editor value="{{jobDetail.introduce}}" isEdit="{{false}}" editorHeight="{{showList[0].isAll ? 'auto' : 75}}" isScroll="{{false}}" />
+      </view>
+      <view class="form-content_getall" bindtap="toggleShoAll" data-index="{{0}}" wx:if="{{jobDetail.introduceLength > 60}}">
+        {{showList[0].isAll ? '[收起]' : '[查看全部]'}}
+      </view>
+    </view>
+  </view>
+
+  <view class="modlue-item" wx:if="{{jobDetail.companyintroduce}}">
+    <view class="modlue-title">
+      <view class="title-icon" />
+      <view class="title-text">公司介绍</view>
+    </view>
+    <view class="form-content">
+      <view class="form-content_value">
+        <!--未做-->
+        <z-editor value="{{jobDetail.companyintroduce}}" isEdit="{{false}}" editorHeight="{{showList[1].isAll ? 0 : 75}}" isScroll="{{false}}" />
+      </view>
+      <view class="form-content_getall" bindtap="toggleShoAll" data-index="{{1}}" wx:if="{{jobDetail.companyintroduceLength > 60}}">
+        {{showList[1].isAll ? '[收起]' : '[查看全部]'}}
+      </view>
+    </view>
+  </view>
+
+  <!-- <view style="width:100%;height:120rpx;background:#ececec" /> -->
+
+  <view class="fixed-btn" wx:if="{{isboss == 2}}">
+    <view class="send-resume" bindtap="sendresumeShow">发送简历</view>
+    <button class="fixed-btn_btn" bindtap="sendMessage" data-phone="{{jobDetail.mobile}}">立即沟通</button>
+  </view>
+
+  <view class="fixed-star_share">
+    <block wx:if="{{isboss == 2}}">
+      <view class="star-share s-normal" bindtap="clickIconTap" wx:if="{{!jobDetail.iscollection}}">
+        <image class="ss-icon" src="https://cdn1.chinayarn.com/dsc/2020-10/img/nSUOqphpIlO0b81603160020201020.png" mode="widthFix" />
+      </view>
+      <view class="star-share s-isstar" bindtap="clickIconTap" wx:else>
+        <image class="ss-icon" src="https://cdn1.chinayarn.com/dsc/2020-10/img/WoB8cphpFtzXW01603160055201020.png" mode="widthFix" />
+      </view>
+    </block>
+    <view class="star-share s-normal">
+      <button class="btn-share" bind:tap="openShare">
+        <image class="ss-icon" src="https://cdn1.chinayarn.com/dsc/2020-10/img/n2dQ0phpF6cqfG1603160082201020.png" mode="widthFix" />
+      </button>
+    </view>
+  </view>
+
+  <view class="mask_div" catchtouchmove="catchtap" wx:if="{{showDialog}}">
+    <view class="dialog">
+      <image src="https://cdndxt.chinayarn.com/img/2020-10/LQNgmphps5T1wT1603265978201021.png" bindtap="getOrderDetail" style="width:581rpx" mode="widthFix" />
+      <image src="https://cdn1.chinayarn.com/xcx/img2/index/222.png" class="closeIcon" mode="widthFix" bindtap="toggleDialogShow" />
+    </view>
+  </view>
+
+  <view class="mask_div" catchtouchmove="catchtap" bind:tap="sendresumeShow" wx:if="{{selectResumeShow}}">
+    <view class="selectresume" catch:tap="catchtap">
+      <view class="resume-header">选择附件简历</view>
+      <view>
+        <view wx:for="{{resumes}}" class="resume-item" catchtap="clickCheckIcon" data-id="{{item.id}}">
+          <view class="i-left">
+            <image wx:if="{{item.type == 'pdf'}}" src="https://cdn1.chinayarn.com/dsc/2020-11/img/XV6R3phphD6wZf1605165849201112.png" />
+            <image wx:elif="{{item.type == 'word'}}" src="https://cdn1.chinayarn.com/dsc/2020-11/img/3HcPRphpimzFjE1605165835201112.png" />
+            <image wx:else src="https://cdn1.chinayarn.com/dsc/2020-11/img/eEFvmphp5JjEGQ1605165510201112.png" />
+          </view>
+          <view class="i-center">
+            <view class="i-name">{{item.file_name}}</view>
+            <view class="i-time">{{item.time}}上传</view>
+          </view>
+          <view class="i-choose">
+            <image src="{{item.isOn ? 'https://cdn1.chinayarn.com/dsc/2020-11/img/mlNu0phpNQxZHJ1605492188201116.png' : 'https://cdn1.chinayarn.com/dsc/2020-11/img/BJ3O4phpjHH1N11605492175201116.png'}}" />
+          </view>
+        </view>
+      </view>
+      <view class="send-resume__btn {{!iscansend ? 'send-btn__drak' : ''}}" catch:tap="sendresume">发送</view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <loading />
+</view>
+<view class="dialog-wrapper poster-dialog {{bigimg ? 'active' : ''}}">
+  <view class="flex-worp">
+    <view class="poster-box">
+      <image class="coloesimg" bindtap="closePoster" src="https://cdn1.chinayarn.com/xcx/img2/index/222.png"></image>
+      <image src="{{imagePath}}" class="imgs" mode="widthFix"></image>
+    </view>
+    <view class="gotoSign">
+      <z-button bind:tap="saveCard">保存海报</z-button>
+    </view>
+  </view>
+</view>
+<!--canvas盒子-->
+<view class="canvas-box">
+  <canvas canvas-id="cvs" class="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+</view>

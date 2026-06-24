@@ -1,0 +1,40 @@
+<view class="tab-list">
+  <view class="tab-item {{ currentIndex == 1 ? 'tab-item_on' : null }}" bindtap="tabitemClick" data-index="{{1}}">
+    <text>已联系</text>
+  </view>
+  <view class="tab-item {{ currentIndex == 2 ? 'tab-item_on' : null }}" bindtap="tabitemClick" data-index="{{2}}">
+    <text>收藏库</text>
+  </view>
+</view>
+<view class="talent-list" wx:if="{{talentList.length > 0}}">
+  <view wx:if="{{currentIndex == 1}}">
+    <block wx:for="{{talentList}}" wx:key="index">
+      <talent 
+        bindtap="gopath" 
+        isDelete="{{true}}"
+        binddeleteEvent="deleteItem" 
+        talent="{{item}}" 
+        data-id="{{item.itemid}}" 
+        data-url="/pages/AQiyeduan/talentDetail/talentDetail"
+        bindrefreshTalentList="refreshTalentList"></talent>
+      <view class="talent-dark"></view>
+    </block>
+  </view>
+  <view wx:else>
+    <block wx:for="{{talentList}}" wx:key="index">
+      <talent 
+        bindtap="gopath" 
+        isShowstar="{{true}}" 
+        bindcancelClick="handleCancelClick" 
+        talent="{{item}}" 
+        data-id="{{item.itemid}}" 
+        data-url="/pages/AQiyeduan/talentDetail/talentDetail"
+        bindrefreshTalentList="refreshTalentList"></talent>
+      <view class="talent-dark"></view>
+    </block>
+  </view>
+  <view class="nomore">暂无更多</view>
+</view>
+<view wx:else class="nomoredata">
+暂无数据... 
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {
+    "FormItem": "/components/AQiyeduan/FormItem/FormItem"
+  },
+  "navigationBarTitleText": "在线简历编辑",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

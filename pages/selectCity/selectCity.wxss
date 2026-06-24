@@ -1,0 +1,64 @@
+.container-con{
+  display: flex; 
+  justify-content: flex-start;
+}
+.left-list{
+  max-height: 100vh;
+  height: 92vh;
+  width: 33%;
+}
+.left-list_dark{
+  background-color: #f6f6f6;
+}
+.left-list_white{
+  background-color: #fff;
+}
+.left-item{
+  width: 260rpx;
+  height: 100rpx;
+  text-align: left;
+  line-height: 100rpx;
+  color: #444444;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;  
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+}
+
+.left-item_on{
+  color: #26BA8D;
+  font-weight: bold;
+}
+.plaseChoose{
+  color: #bbb;
+  font-size: 26rpx;
+  margin-left: 8rpx; 
+  padding: 28rpx 0;
+}
+
+.bottomsub{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10rpx 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+  background: #fff;
+}
+.save-btn::after{
+  border: none;
+  background-color: transparent;
+}
+.save-btn{
+  background-color: #26BA8D;
+  color: #fff;
+  border-radius: 40rpx;
+  font-weight: normal;
+}
+.save-btn:active{
+  opacity: 0.8;
+}

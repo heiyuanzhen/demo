@@ -1,0 +1,86 @@
+<scroll-view style="width:750rpx;height:100vh;padding-bottom:130rpx;box-sizing: border-box;background-color: #f2f2f2;"
+  refresher-enabled="{{true}}" class="scrollView" scroll-y="{{true}}" bindrefresherrefresh="pulldownrefresh"
+  refresher-enabled="{{true}}" refresher-triggered="{{isTriggerEnd}}">
+  <view class="top-header" style="padding-top:{{statusbar+jiaonangheight}}px">
+    <block wx:if="{{isLogin}}">
+      <view class="user-info">
+        <!-- <view class="left-view"> -->
+        <image src="{{userinfo.avatarUrl}}" class="left-avatar" mode="widthFix" />
+        <!-- </view> -->
+        <view class="center-name">{{userinfo.truename}}</view>
+        <view class="right-edit" bind:tap="gopath" data-url="/pages/ARencaiduan/editUseinfo/editUseinfo">
+          <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/zUH3CphpkmgAH61603160600201020.png" class="r-icon" />
+          <view class="r-text">编辑</view>
+        </view>
+      </view>
+    </block>
+
+    <view class="user-info" wx:else>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-09/img/Y0OhCphpPbz6Iq1599642674200909.png" class="left-avatar" />
+      <button class="center-name" bindtap="gopath" data-url="/pages/phoneLogin/phoneLogin" data-pathtype="2"
+        data-isgologinpath="1">请登录
+      </button>
+    </view>
+
+    <view class="item-three">
+      <view class="tab-item" bind:tap="gopath" data-url="/pages/ARencaiduan/furrowPassage/furrowPassage?index=1">
+        <view class="tab-num">{{userStatu.contact || '0'}}</view>
+        <view class="tab-text">沟通过</view>
+      </view>
+      <view class="tab-item" bind:tap="gopath" data-url="/pages/ARencaiduan/furrowPassage/furrowPassage?index=2">
+        <view class="tab-num">{{userStatu.touti || '0'}}</view>
+        <view class="tab-text">已投简历</view>
+      </view>
+      <view class="tab-item" bind:tap="gopath" data-url="/pages/ARencaiduan/furrowPassage/furrowPassage?index=3">
+        <view class="tab-num">{{userStatu.coll || '0'}}</view>
+        <view class="tab-text">收藏</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bg-color">
+    <view class="col-item b-bottom-2" bindtap="gopath" data-url="/pages/AQiyeduan/talentDetail/talentDetail"
+      data-id="{{edit_userinfo.itemid || ''}}" data-frompath="minepage">
+      <view class="col-title">在线简历</view>
+      <view class="col-right">
+        <image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+      </view>
+    </view>
+    <view class="col-item b-bottom-2" bindtap="gopath" data-url="/pages/ARencaiduan/resumeAttachment/resumeAttachment">
+      <view class="col-title">附件简历</view>
+      <view class="col-right">
+        <view class="rig-text" wx:if="{{isLogin}}">已上传{{userStatu.uoload || '0'}}份</view>
+        <image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+      </view>
+    </view>
+    <view class="col-item b-bottom-2" bindtap="gopath" data-url="/pages/ARencaiduan/jobHunting/jobHunting">
+      <view class="col-title">求职意向</view>
+      <view class="col-right">
+        <view class="rig-text" wx:if="{{isLogin}}">{{situationinfo}}</view>
+        <image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+      </view>
+    </view>
+    <!-- <view class="col-item" bindtap="callUs" data-phone="0571-82635788"> -->
+    <view class="col-item" bindtap="callUs" data-phone="15868185023">
+      <view class="col-title">联系我们</view>
+      <view class="col-right">
+        <image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+      </view>
+    </view>
+    <view class="dark-eee" />
+    <view class="col-item" bindtap="gopath" data-url="/pages/identification/identification?tab=2" data-pathtype="2">
+      <view class="col-title">切换身份</view>
+      <view class="col-right">
+        <view class="rig-text">个人</view>
+        <image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+      </view>
+    </view>
+  </view>
+
+  <view class="logout-con" wx:if="{{isLogin}}">
+    <button class="logout-btn" bind:tap="logoutit">退出登录</button>
+  </view>
+  <!--
+  https://glack.net/img/blog/art_imgs/0.jpg
+-->
+</scroll-view>

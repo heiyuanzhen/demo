@@ -1,0 +1,13 @@
+<privacy-popup bind:agree="agree" bind:disagree="disagree"></privacy-popup>
+<view class="container" wx:if="{{isBoss == 1}}">
+  <boss-index style="display: {{currentTabbarIndex == 1 ? 'block' : 'none'}}" vHeight="{{vHeight}}" bind:toggleTabbar="toggleTabbar" currentTabbarIndex="{{currentTabbarIndex}}" is_first="{{is_first}}"></boss-index>
+  <boss-mine wx:if="{{isShowPageTwo}}" style="display: {{currentTabbarIndex == 2 ? 'block' : 'none'}}" currentTabbarIndex="{{currentTabbarIndex}}"></boss-mine>
+</view>
+
+<view wx:else>
+  <talent-index style="display: {{currentTabbarIndex == 1 ? 'block' : 'none'}}" vHeight="{{vHeight}}" bind:toggleTabbar="toggleTabbar" currentTabbarIndex="{{currentTabbarIndex}}"></talent-index>
+  <talent-mine style="display: {{currentTabbarIndex == 2 ? 'block' : 'none'}}" currentTabbarIndex="{{currentTabbarIndex}}"></talent-mine>
+</view>
+
+
+<tabbar style="display: {{showTabbar ? 'block': 'none'}}" bindclicktabbar="clicktabbar" id="tabbar" isBoss="{{isBoss}}"></tabbar>

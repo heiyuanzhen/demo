@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {
+    "talent": "/components/ARencaiduan/talent/talent"
+  },
+  "backgroundColor": "#ffffff",
+  "navigationBarTitleText": "人才信息"
+}

@@ -1,0 +1,35 @@
+
+.swiper-box {
+  transition: all 2s;
+}
+.banner_back {
+  position: absolute;
+  right: 0rpx;
+  bottom: -1rpx;
+  height: 46rpx;
+  width: 100%;
+}
+.dots {
+  position: absolute;
+  right: 30rpx;
+  bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots .dot {
+  margin: 0 5rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: all 0.6s;
+  font: 300 18rpx/28rpx "microsoft yahei";
+}
+
+.dots .dot_active {
+  background: #36ceb4;
+  color: #36ceb4;
+}
+

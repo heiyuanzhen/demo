@@ -1,0 +1,47 @@
+page{
+  background-color: rgba(246, 246, 246, 1);
+}
+.top-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+}
+.h-title{
+  font-size: 32rpx;
+  color: #26BA8D;
+}
+.h-icon{
+  width: 24rpx;
+  height: 22rpx;
+}
+.resume-list{
+  margin-top: 20rpx;
+}
+.resume-item{
+  padding: 30rpx;
+  background-color: #fff;
+}
+.resume-item_on{
+  background-color: rgba(246, 252, 250, 1) !important;
+}
+.border-b{
+  height: 2rpx;
+  background-color: #ececec;
+  width: 720rpx;
+  margin-left: 30rpx;
+}
+.r-name{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.r-center{
+  font-size: 30rpx;
+
+}
+.r-bottom{
+  font-size: 28rpx;
+  color: #abadbf;
+
+}

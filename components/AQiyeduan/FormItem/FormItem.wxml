@@ -1,0 +1,267 @@
+<view class="form-item" wx:if="{{type == 'text'}}" style="{{styleStr}}">
+  <view class="form-title">
+    <view class="form-text">{{label}}</view>
+
+    <view class="form-require" wx:if="{{isRequire}}">*</view>
+  </view>
+  <view class="form-inp">
+    <input type="text" class="in-p" value="{{value}}" placeholder="{{placeholder}}" bindinput="InputTextChange" data-key="{{key}}" placeholder-class="place-class" />
+  </view>
+</view>
+
+<block wx:if="{{type == 'select'}}">
+  <!--一级-->
+  <view class="form-item" wx:if="{{level == 'one'}}" style="{{styleStr}}">
+    <view class="form-title">
+      <view class="form-text">{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp">
+      <picker range="{{normalRangeArr}}" range-key="name" data-key="{{key}}" value="{{index}}" bindchange="pickerChange">
+        <view class="picker place-class_on" wx:if="{{normalRangeArr[index].name}}">
+          {{normalRangeArr[index].name}}
+        </view>
+        <view class="picker place-class" wx:else>
+          {{placeholder}}
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+  <!--二级-->
+  <view class="form-item" wx:if="{{level == 'two'}}" style="{{styleStr}}">
+    <view class="form-title">
+      <view class="form-text">{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp">
+      <picker range="{{normalRangeArr}}" range-key="name" value="{{index}}" bindchange="pickerChange">
+        <view class="picker place-class">
+          {{normalRangeArr[index].name || placeholder }}
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+  <!--三级-->
+  <view class="form-item" wx:if="{{level == 'three'}}" style="{{styleStr}}">
+    <view class="form-title">
+      <view class="form-text">{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp">
+      <picker mode="multiSelector" range="{{threelevel}}" value="{{index}}" bindchange="threeLevelPickerChange" bindcolumnchange="bindMultiPickerColumnChange">
+        <view class="picker place-class place-class_on" wx:if="{{selectText[0] || selectText[1] || selectText[2] }}">
+          {{ selectText[0] }} {{ selectText[1] == '不限' ? '' : selectText[1] }} {{ selectText[2] == '不限' ? '' : selectText[2] }}
+        </view>
+        <view class="picker place-class" wx:else>
+          {{ placeholder }}
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+</block>
+
+<view class="form-item" wx:if="{{type == 'textarea'}}">
+  <view class="form-title">
+    <view class="form-text">{{label}}</view>
+    <view class="form-require">*</view>
+  </view>
+  <!-- <view class="form-area"> -->
+  <!-- <textarea
+		 type="text"
+		 class="in-a"
+		 placeholder="{{placeholder}}"
+		 placeholder-class="place-class"
+		 bindinput="InputTextChange"
+		 data-key="{{key}}"
+		 value="{{value}}"
+		/> -->
+
+  <z-Eeditor value="{{value}}" isEdit="{{true}}" isScroll="{{true}}" bind:editorChange="editorChange" isUploadImage="{{false}}" data-key="{{key}}" isPagetop="{{true}}" bind:pagetop="pagetop" width="670rpx"></z-Eeditor>
+
+  <!-- </view> -->
+</view>
+
+<block wx:if="{{type == 'address' && isboss==2}}">
+  <view class="form-item" style="width: 670rpx;">
+    <view class="form-title" style="{{fw?'margin-bottom: 20rpx;':''}}">
+      <view class="form-text" style="{{fw?'font-weight:bold;':''}}">工作地址</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="place-class_on" wx:if="{{region.length > 0}}">
+          当前选择：{{region[0]}} {{region[1] == '不限' ? '' : region[1]}} {{region[2] == '不限' ? '' : region[2]}}
+        </view>
+        <view class="place-class" wx:else>
+          请选择城市
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+</block>
+<block wx:if="{{type == 'addressTwo' && isboss==1}}">
+  <view class="form-item" style="width: 670rpx;">
+    <view class="form-title" style="{{fw?'margin-bottom: 20rpx;':''}}">
+      <view class="form-text" style="{{fw?'font-weight:bold;':''}}">工作地址</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="place-class_on" wx:if="{{region && region.length > 0}}">
+          当前选择：{{region[0]}} {{region[1] == '不限' ? '' : region[1]}} {{region[2] == '不限' ? '' : region[2]}}
+        </view>
+        <view class="place-class" wx:else>
+          请选择城市
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+</block>
+
+<view class="form-item_edit" wx:if="{{type == 'edit-text'}}" style="{{styleStr}}">
+  <view class="form-title_edit">
+    <view>{{label}}</view>
+    <view class="form-require" wx:if="{{isRequire}}">*</view>
+  </view>
+  <view class="form-inp_edit">
+    <input type="text" class="in-p" value="{{value}}" placeholder="{{placeholder}}" bindinput="InputTextChange" data-key="{{key}}" placeholder-class="place-class" style="flex: 1" />
+    <view class="dark-text_eee" style="margin-right: 20rpx">
+      {{textRight}}
+    </view>
+  </view>
+</view>
+
+<block wx:if="{{type == 'edit-select'}}">
+  <!--一级-->
+  <view class="form-item_edit" wx:if="{{level == 'one'}}" style="{{styleStr}}">
+    <view class="form-title_edit">
+      <view>{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp_edit">
+      <picker range="{{normalRangeArr}}" range-key="name" data-key="{{key}}" value="{{index}}" bindchange="pickerChange">
+        <view class="picker place-class_on" wx:if="{{normalRangeArr[index].name}}">
+          {{normalRangeArr[index].name}}
+        </view>
+        <view class="picker place-class" wx:else>
+          {{placeholder}}
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+  <!--二级-->
+  <view class="form-item" wx:if="{{level == 'two'}}" style="{{styleStr}}">
+    <view class="form-title">
+      <view class="form-text">{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp">
+      <picker range="{{normalRangeArr}}" range-key="name" value="{{index}}" bindchange="pickerChange">
+        <view class="picker place-class">
+          {{normalRangeArr[index].name || placeholder }}
+        </view>
+      </picker>
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" />
+    </view>
+  </view>
+  <!--三级-->
+  <view class="form-item_edit" wx:if="{{level == 'three'}}" style="{{styleStr}}">
+    <view class="form-title_edit">
+      <view>{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp_edit">
+      <picker mode="multiSelector" range="{{threelevel}}" value="{{index}}" bindchange="threeLevelPickerChange" bindcolumnchange="bindMultiPickerColumnChange" style="width: 100%;">
+        <view class="picker place-class_on" wx:if="{{selectText[0] || selectText[1] || selectText[2] }}">
+          {{ selectText[0] }} {{ selectText[1] == '不限' ? '' : selectText[1] }} {{ selectText[2] == '不限' ? '' : selectText[2] }}
+        </view>
+        <view class="picker place-class" wx:else>
+          {{ placeholder }}
+        </view>
+
+      </picker>
+      <!-- <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" /> -->
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{type == 'edit-address'}}">
+  <view class="form-item_edit" style="width: 670rpx;">
+    <view class="form-title_edit">
+      <view>现居住地</view>
+      <view class="form-require">*</view>
+    </view>
+    <view class="form-inp_edit">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="place-class_on" wx:if="{{region && region[0] !== ''}}">
+          当前选择：{{region[0]}} {{region[1] == '不限' ? '' : region[1]}} {{region[2] == '不限' ? '' : region[2]}}
+        </view>
+        <view class="place-class" wx:else>
+          请选择城市
+        </view>
+      </picker>
+      <!-- <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" /> -->
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{type == 'edit-birthday'}}">
+  <view class="form-item_edit" style="width: 670rpx;">
+    <view class="form-title_edit">
+      <view>出生日期</view>
+      <view class="form-require">*</view>
+    </view>
+    <view class="form-inp_edit">
+      <picker mode="date" value="{{birthday}}" start="1950-01-01" end="2022-12-24" bindchange="dateChange">
+        <view class="place-class">
+          {{birthday || '请选择您的生日'}}
+        </view>
+      </picker>
+      <!-- <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/Tl2mcphpJoz7kj1603159781201020.png" class="in-icon" /> -->
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{type == 'edit-salary'}}">
+  <view class="form-item_edit" style="{{styleStr}}">
+    <view class="form-title_edit">
+      <view>{{label}}</view>
+      <view class="form-require" wx:if="{{isRequire}}">*</view>
+    </view>
+    <view class="form-inp_edit_salary">
+      <input type="number" class="inp-salary" value="{{minsalary || ''}}" placeholder="请输入" bindinput="InputTextChange" data-key="minsalary" placeholder-class="place-class" />
+      <view style="padding: 0 30rpx;" class="dark-text_eee">至</view>
+      <input type="number" class="inp-salary" value="{{maxsalary || ''}}" placeholder="请输入" bindinput="InputTextChange" data-key="maxsalary" placeholder-class="place-class" />
+      <view class="dark-text_eee">
+        元/月
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class="form-item border-bottom" wx:if="{{type == 'edit-textarea'}}" style="{{styleStr}}">
+  <view class="form-title">
+    <view class="form-text">{{label}}</view>
+    <view class="form-require" wx:if="{{isRequire}}">*</view>
+    <!-- <view class="text-num">当前可输入(10/150)个字</view> -->
+  </view>
+  <!-- <z-editor
+	 value="{{value}}"
+	 isEdit="{{true}}"
+	 isScroll="{{true}}"
+	 bind:editorChange="editorChange"
+	 isUploadImage="{{false}}"
+	 data-key="{{key}}"
+	 editorid="{{editorid}}"
+	 isPagetop="{{true}}"
+	 width="670rpx"
+	 isToolbar="{{false}}"
+	/> -->
+  <textarea placeholder-class="textArea" value="{{value}}" placeholder="请输入" data-key="{{key}}" style="width: 670rpx;padding: 15rpx 0;" bindinput="textareaChange"></textarea>
+</view>

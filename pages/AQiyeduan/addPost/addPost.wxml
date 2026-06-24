@@ -1,0 +1,60 @@
+<view class="container" wx:if="postselectData.catid">
+	<view class="d-flex">
+		<FormItem isRequire="{{keyItems['lxr'].isRequire}}" label="联系人" placeholder="{{keyItems['lxr'].placeholder}}"
+			styleStr="width: 320rpx;" key="lxr" bindInputTextChange="InputChange" value="{{formdata.lxr}}" />
+		<FormItem isRequire="{{keyItems['lxdh'].isRequire}}" label="联系电话" placeholder="{{keyItems['lxdh'].placeholder}}"
+			styleStr="width: 320rpx;" key="lxdh" bindInputTextChange="InputChange" value="{{formdata.lxdh}}" />
+	</view>
+	<FormItem isRequire="{{keyItems['title'].isRequire}}" label="岗位名称" placeholder="{{keyItems['title'].placeholder}}"
+		styleStr="width: 670rpx;" key="title" bindInputTextChange="InputChange" value="{{formdata.title}}" />
+	<view class="d-flex">
+		<FormItem isRequire="{{keyItems['catid'].isRequire}}" type="select" label="岗位类别"
+			placeholder="{{keyItems['catid'].placeholder}}" level="three" bindthreeLevelPickerChange="threeLevelPickerChange"
+			rangerObj="{{postselectData.catid}}" styleStr="width: 670rpx;" threeLevelLabel="{{formdata.catname}}"
+			threeLevelValue="{{formdata.catid}}" />
+	</view>
+	<view class="d-flex">
+		<FormItem isRequire="{{keyItems['xinzi'].isRequire}}" type="select" label="给予薪资"
+			placeholder="{{keyItems['xinzi'].placeholder}}" key="xinzi" bindtwolevelPickerChange="twolevelPickerChange"
+			rangeArr="{{postselectData.xinzi}}" oneLevelId="{{formdata.xinzi}}" />
+		<FormItem isRequire="{{keyItems['total'].isRequire}}" label="招聘人数" placeholder="{{keyItems['total'].placeholder}}"
+			key="total" bindInputTextChange="InputChange" value="{{formdata.total}}" />
+	</view>
+	<view class="d-flex">
+		<FormItem isRequire="{{keyItems['experience'].isRequire}}" type="select" label="工作经验"
+			placeholder="{{keyItems['experience'].placeholder}}" key="experience"
+			bindtwolevelPickerChange="twolevelPickerChange" rangeArr="{{postselectData.experience}}"
+			oneLevelId="{{formdata.experience}}" />
+		<FormItem isRequire="{{keyItems['education'].isRequire}}" type="select" label="学历"
+			placeholder="{{keyItems['education'].placeholder}}" key="education"
+			bindtwolevelPickerChange="twolevelPickerChange" rangeArr="{{postselectData.education}}"
+			oneLevelId="{{formdata.education}}" />
+	</view>
+	<FormItem isRequire="{{keyItems['address'].isRequire}}" type="addressTwo" address="{{formdata.address}}"
+		bindaddresschange="addresschange" />
+	<FormItem isRequire="{{keyItems['introduce'].isRequire}}" type="textarea" label="岗位描述"
+		placeholder="{{keyItems['introduce'].placeholder}}" key="introduce" bindeditorChange="editorChange"
+		value="{{formdata.introduce}}" editorid="editorid1" />
+	<view class="d-flex">
+		<FormItem isRequire="{{keyItems['gzxz'].isRequire}}" type="select" label="工作性质"
+			placeholder="{{keyItems['gzxz'].placeholder}}" key="gzxz" bindtwolevelPickerChange="twolevelPickerChange"
+			rangeArr="{{postselectData.gzxz}}" oneLevelId="{{formdata.gzxz}}" />
+		<FormItem isRequire="{{keyItems['hyzk'].isRequire}}" type="select" label="婚姻状况"
+			placeholder="{{keyItems['hyzk'].placeholder}}" key="hyzk" bindtwolevelPickerChange="twolevelPickerChange"
+			rangeArr="{{postselectData.hyzk}}" oneLevelId="{{formdata.hyzk}}" />
+	</view>
+	<view class="d-flex">
+		<FormItem isRequire="{{keyItems['nl'].isRequire}}" type="select" label="年龄"
+			placeholder="{{keyItems['nl'].placeholder}}" key="nl" bindtwolevelPickerChange="twolevelPickerChange"
+			rangeArr="{{postselectData.nl}}" oneLevelId="{{formdata.nl}}" />
+		<FormItem isRequire="{{keyItems['gender'].isRequire}}" type="select" label="性别"
+			placeholder="{{keyItems['gender'].placeholder}}" key="gender" bindtwolevelPickerChange="twolevelPickerChange"
+			rangeArr="{{postselectData.gender}}" oneLevelId="{{formdata.gender}}" />
+	</view>
+	<view class="add-btn">
+		<view class="b-tn" bindtap="addPostClick">{{!isEdit ? '发布岗位' : '修改岗位信息'}}</view>
+	</view>
+</view>
+<view wx:else>
+	<loading></loading>
+</view>

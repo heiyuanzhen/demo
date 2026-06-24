@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/pageIndex/pageIndex",
+    "pages/AQiyeduan/talentDetail/talentDetail",
+    "pages/selectCity/selectCity",
+    "pages/selectQuery/selectQuery",
+    "pages/AQiyeduan/editInfo_company/editInfo",
+    "pages/phoneLogin/phoneLogin",
+    "pages/identification/identification",
+    "pages/orderDetail/orderDetail",
+    "pages/ARencaiduan/postItemDetail/postItemDetail",
+    "pages/AQiyeduan/starAndContact/starAndContact",
+    "pages/AQiyeduan/recruitments/recruitments",
+    "pages/AQiyeduan/addPost/addPost",
+    "pages/AQiyeduan/resumeRepo/resumeRepo",
+    "pages/ARencaiduan/editInfo_talent/editInfo_talent",
+    "pages/ARencaiduan/furrowPassage/furrowPassage",
+    "pages/ARencaiduan/resumeAttachment/resumeAttachment",
+    "pages/ARencaiduan/jobHunting/jobHunting",
+    "pages/ARencaiduan/addJobHunting/addJobHunting",
+    "pages/ARencaiduan/editUseinfo/editUseinfo",
+    "pages/ARencaiduan/seasoncardOpened/seasoncardOpened",
+    "pages/ARencaiduan/resumeAttachment/web-view/web-view",
+    "pages/ARencaiduan/preferentialPay/preferentialPay",
+    "pages/uploadAvatar/uploadAvatar"
+
+  ],
+  "requiredPrivateInfos": [
+    "chooseLocation",
+    "getLocation"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#26BA8D"
+  },
+  "sitemapLocation": "sitemap.json",
+  "__usePrivacyCheck__": true,
+  "usingComponents": {
+    "tabbar": "/components/tabbar/tabbar",
+    "z-editor": "/components/z-editor/z-editor",
+    "z-fixbutton": "/components/z-fixbutton/z-fixbutton"
+  }
+}

@@ -1,0 +1,51 @@
+<view class="fzrc">
+  <image src="https://cdndxt.chinayarn.com/img/2020-10/z9hbBphp5TFKUz1603265291201021.png" mode="widthFix" />
+</view>
+
+<button class="btn-login" bindtap="getuserinfo">
+  <!-- <image class="ss-icon" src="https://cdndxt.chinayarn.com/img/2020-10/pJtQGphpk49U7m1603265066201021.png" mode="widthFix" /> -->
+  <view>请授权用户信息</view>
+</button>
+<!-- 
+<button
+ class="btn-login"
+ open-type="getUserInfo" 
+ bindgetuserinfo="getuserinfo"
+>
+	<image
+	 class="ss-icon"
+	 src="https://cdndxt.chinayarn.com/img/2020-10/pJtQGphpk49U7m1603265066201021.png"
+	 mode="widthFix"
+	/>
+	<view>请授权用户信息</view>
+</button> -->
+<!-- 
+<button
+ class="btn-login"
+ open-type="getPhoneNumber"
+ bindgetphonenumber="getphonenumber"
+>
+	<image
+	 class="ss-icon"
+	 src="https://cdndxt.chinayarn.com/img/2020-10/pJtQGphpk49U7m1603265066201021.png"
+	 mode="widthFix"
+	/>
+	<view>手机号快捷登录</view>
+</button> -->
+
+<!-- <view class="note">
+  <image src="https://cdndxt.chinayarn.com/img/2020-10/myLVzphp0ZlrkP1603265469201021.png" mode="widthFix" />
+  <text>登录及代表阅读并同意</text>
+  <text style="color: #56aaff">《隐私政策》</text>
+  <text>和</text>
+  <text style="color: #56aaff">《服务协议》</text>
+</view> -->
+
+<view class="mask-side" wx:if="{{step == 2}}">
+  <view class="mask-center">
+    <button class="btn-mobile" open-type="getPhoneNumber" bind:getphonenumber="getphonenumber">
+      <image class="mask-icon" src="https://cdndxt.chinayarn.com/img/2026-04/kns1pphpCzGqSg1777366284260428.png" mode="widthFix" />
+    </button>
+    <image src="https://cdn1.chinayarn.com/dsc/2020-11/img/FC3u0phpHjB8ec1604979315201110.png" class="close-icon" bind:tap="hiddenMask" />
+  </view>
+</view>

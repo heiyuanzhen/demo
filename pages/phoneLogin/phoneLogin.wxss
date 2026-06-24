@@ -1,0 +1,90 @@
+.btn-login{
+  font-size: 29rpx;
+  background-color: #26BA8D;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 522rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 300rpx;
+}
+
+.ss-icon{
+  width: 45rpx;
+  margin-right: 10rpx;
+}
+
+.btn-login::after{
+  border: none;
+}
+.btn-login:active{
+  opacity: 0.8;
+}
+
+.fzrc image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.fzrc{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+  margin-top: 300rpx;
+}
+
+.note image{
+  width: 26rpx;
+}
+.note{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #444444;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.mask-side{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-mobile::after{
+  border: none;
+}
+.btn-mobile{
+  width: 580rpx;
+  height: 580rpx;
+  background-color: transparent;
+  padding: 0;
+}
+
+.close-icon{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+}
+
+.mask-icon{
+  width: 100%;
+  height: 100%;
+}
+
+.mask-center{
+  position: relative;
+}

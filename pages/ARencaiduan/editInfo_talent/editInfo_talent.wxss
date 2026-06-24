@@ -1,0 +1,47 @@
+@import "../../AQiyeduan/editInfo_company/editInfo.wxss";
+
+
+.b-btn{
+  padding: 5rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.right-icon{
+  margin-right: 20rpx;
+}
+.right-icon image{
+  width: 10rpx;
+  height: 18rpx;
+}
+
+.editinfo-name{
+  font-size: 34rpx;
+  color: #444444;
+  font-weight: bold;
+}
+
+
+
+.d-flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.show{
+  display: block;
+  padding-bottom: 100rpx;
+}
+.hidden{
+  display: none;
+  padding-bottom: 0;
+}
+.lookmore{
+  width: 670rpx;
+  color: #abadbf;
+  text-align: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}

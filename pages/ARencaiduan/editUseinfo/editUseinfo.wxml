@@ -1,0 +1,53 @@
+<view class="form-container">
+	<view class="form-item form-item-lr" bind:tap="uploadAvatar">
+		<view class="icon-text">
+			<text>用户头像</text>
+			<text wx:if="{{isboss==1}}">(可上传公司LOGO)</text>
+		</view>
+		<view class="icon-img">
+			<image src="{{companyinfo.img || 'https://cdn1.chinayarn.com/dsc/2020-09/img/Y0OhCphpPbz6Iq1599642674200909.png'}}" />
+		</view>
+	</view>
+
+	<view class="form-item form-primary">
+		<view class="form-label">
+			<view>
+				<text>姓名</text>
+				<text style="color: red;">*</text>
+			</view>
+		</view>
+		<view class="form-select">
+			<view class="select-body">
+				<input
+				 type="text"
+				 placeholder='请输入姓名(请填写完整)'
+				 value="{{companyinfo.truename}}"
+				 data-key="truename"
+				 bindinput="changeCompanyInfo"
+				 style="width: 80%;"
+				/>
+			</view>
+		</view>
+	</view>
+	
+	<view class="form-item form-primary">
+		<view class="form-label">
+			<view>
+				<text>手机号(不可编辑)</text>
+			</view>
+		</view>
+		<view class="form-select">
+			<view class="select-body">
+				<input
+				 type="number"
+				 value="{{companyinfo.mobile}}"
+				 style="width: 80%;"
+				 disabled="{{true}}"
+				/>
+			</view>
+		</view>
+	</view>
+
+</view>
+
+<z-fixbutton bindtap="userinfoEditFun">保存</z-fixbutton>

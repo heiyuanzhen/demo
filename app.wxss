@@ -1,0 +1,9 @@
+button{
+  color: #000;
+  border: none;
+  margin: 0;
+}
+
+button::after{
+  border: none;
+}

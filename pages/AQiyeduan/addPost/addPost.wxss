@@ -1,0 +1,34 @@
+page{
+  background-color: #fff;
+}
+.container{
+  padding: 40rpx 40rpx 15rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.d-flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 50rpx;
+}
+.b-tn{
+  width: 670rpx;
+  background-color: #26BA8D;
+  color: #fff;
+  border-radius: 70rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  
+}
+.address{
+  padding: 20rpx 30rpx;
+}

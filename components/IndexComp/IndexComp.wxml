@@ -1,0 +1,19 @@
+<view class="header-top" wx:if="{{type == 'search'}}">
+	<!-- <text class="text">{{title}}</text> -->
+	<view class="hedaer-search">
+		<image src="https://cdn1.chinayarn.com/dsc/2020-10/img/MEfS0phpoQHkOC1603159966201020.png" class="search-icon" />
+		<input
+		 type="text"
+		 value="{{keyword}}"
+		 placeholder="{{placeholder}}"
+		 class="search-inp"
+		 bindconfirm="searchTalent"
+		 confirm-type="search"
+		/>
+    <view bind:tap="closeClick" style="display: flex;">
+    <!-- 111 -->
+      <image src="https://cdn1.chinayarn.com/dsc/2020-10/img/E1K27php8RbZQy1603697500201026.png" class="close-icon"  />
+    </view>
+	</view>
+</view>
+

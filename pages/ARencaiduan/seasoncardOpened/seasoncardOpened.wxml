@@ -1,0 +1,17 @@
+<view class="sesonOpend">
+  <view class="bg-color"></view>
+  <swiper previous-margin="30rpx" next-margin="30rpx" current="{{currentIndex}}" class='swiper' indicator-dots indicator-active-color="#26BA8D" bindchange="swiperItemChange" circular wx:if='{{true}}'>
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item style="text-align:center;position:relative;" class="swiper-item">
+        <view class="bg-white">
+          <image src='{{item.image_url}}' mode="widthFix" class='img' />
+          <view class="swpier-body">
+            <view class="swiper-title">{{item.name}}</view>
+            <z-editor value="{{item.detail}}" isEdit="{{false}}" editorHeight="{{0}}" isScroll="{{false}}"></z-editor>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <z-fixbutton style="margin: 0 70rpx;margin-bottom:40rpx;" bgc="transparent" bind:tap="buyVip">立即购买</z-fixbutton>
+</view>

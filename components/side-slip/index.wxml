@@ -1,0 +1,20 @@
+<block wx:if="{{isDelete}}">
+	<movable-area class="side">
+		<movable-view
+			class="side__view"
+			bind:change="change"
+			bind:touchend="touchend"
+			direction="horizontal"
+			x='{{move}}'>
+			<view class="side__con">
+				<slot></slot>
+			</view>
+			<view id="movable_delete" class="side__del" catchtap="delete">
+				<text>删除</text>
+			</view>
+		</movable-view>
+	</movable-area>
+</block>
+<view wx:else>
+	<slot></slot>
+</view>

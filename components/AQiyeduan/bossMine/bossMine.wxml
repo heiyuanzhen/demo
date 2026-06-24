@@ -1,0 +1,113 @@
+<scroll-view
+ style="width:750rpx;height:100vh;padding-bottom:100rpx;box-sizing: border-box;background-color: #f2f2f2;"
+ refresher-enabled="{{true}}"
+ class="scrollView"
+ scroll-y="{{true}}"
+ bindrefresherrefresh="pulldownrefresh"
+ refresher-triggered="{{isTriggerEnd}}"
+>
+	<view class="user-info" style="padding-top:{{statusbar+jiaonangheight}}px">
+		<view class="userinfo-top" wx:if="{{isLogin}}">
+			<view class="userinfo-avatar">
+				<image class="image" src="{{loginUserinfo.avatarUrl || 'https://cdn1.chinayarn.com/dsc/2020-09/img/Y0OhCphpPbz6Iq1599642674200909.png'}}" />
+			</view>
+			<view class="userinfo-name">
+				<view class="com-name">{{loginUserinfo.truename}}</view>
+				<view class="com-btn" wx:if="{{loginUserinfo && loginUserinfo.isVip == 1}}" bindtap="gopath" data-url="/pages/ARencaiduan/seasoncardOpened/seasoncardOpened">
+					<image class="image" src="https://cdn1.chinayarn.com/dsc/2020-11/img/DWBHnphppCmY4D1605149766201112.png" style="width:40rpx;height:28rpx;" />
+					<view class="company-n">{{loginUserinfo.company}}</view>
+				</view>
+				<view class="com-btn" wx:else>普通企业</view>
+			</view>
+			<view class="userinfo-edit" bindtap="gopath" data-url="/pages/ARencaiduan/editUseinfo/editUseinfo">
+				<image class="image" src="https://cdn1.chinayarn.com/dsc/2020-10/img/zUH3CphpkmgAH61603160600201020.png" />
+				编辑
+			</view>
+		</view>
+		<view class="userinfo-top" wx:else>
+			<view class="userinfo-avatar">
+				<image class="image" src="https://cdn1.chinayarn.com/dsc/2020-09/img/Y0OhCphpPbz6Iq1599642674200909.png" />
+			</view>
+			<view class="userinfo-name">
+				<button
+				 class="pleaseLogin"
+				 data-url="/pages/phoneLogin/phoneLogin"
+				 data-pathtype="2"
+				 bindtap="gopath"
+				 data-isgologinpath="1"
+				>请登录
+				</button>
+			</view>
+		</view>
+		<!--加入会员VIP-->
+		<view
+		 class="userinfo-bottom"
+		 bindtap="gopath"
+		 data-url="pages/ARencaiduan/seasoncardOpened/seasoncardOpened"
+		 wx:if="{{!loginUserinfo || loginUserinfo.isVip != 1}}"
+		>
+			<image class="image" src="https://cdn1.chinayarn.com/dsc/2020-11/img/K80RvphpE5sVEp1606703872201130.png" />
+		</view>
+	</view>
+
+	<view class="bg-color">
+		<view class="col-item" bindtap="gopath" data-url="/pages/AQiyeduan/editInfo_company/editInfo">
+			<view class="col-title">公司信息</view>
+			<view class="col-right">
+				<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+			</view>
+		</view>
+		<view class="col-item" bindtap="gopath" data-url="/pages/AQiyeduan/starAndContact/starAndContact">
+			<view class="col-title">人才信息</view>
+			<view class="col-right">
+				<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+			</view>
+		</view>
+
+		<view class="col-item" bindtap="gopath" data-url="/pages/AQiyeduan/recruitments/recruitments">
+			<view class="col-title">招聘岗位</view>
+			<view class="col-right">
+				<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+			</view>
+		</view>
+
+		<!-- <view
+		 class="col-item"
+		 bindtap="gopath"
+		 data-url="/pages/AQiyeduan/recruitments/recruitments"
+		>
+			<view class="col-title">简历库</view>
+			<view class="col-right">
+				<view class="rig-text" style="color: red;" wx:if="{{jl_count}}">新简历({{jl_count}}份)</view>
+				<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+			</view>
+		</view> -->
+		<!-- <view class="col-item" bindtap="callUs" data-phone="0571-82635788"> -->
+		<view class="col-item" bindtap="callUs" data-phone="15868185023">
+			<view class="col-title">联系我们</view>
+			<view class="col-right">
+				<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+			</view>
+		</view>
+
+		<view class="dark-eee" />
+		<view
+		 class="col-item"
+		 bindtap="gopath"
+		 data-url="/pages/identification/identification"
+		 data-pathtype="2"
+		>
+			<view class="col-title">切换身份</view>
+			<view class="col-right">
+				<view class="rig-text">企业</view>
+				<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" class="rig-img" />
+			</view>
+		</view>
+
+		<view class="logout-con" wx:if="{{isLogin}}">
+			<button class="logout-btn" bind:tap="logoutit">退出登录</button>
+		</view>
+	</view>
+
+</scroll-view>
+

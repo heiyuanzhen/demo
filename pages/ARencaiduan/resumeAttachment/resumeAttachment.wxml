@@ -1,0 +1,23 @@
+<view class="resume-list" wx:if="{{resumes.length > 0}}">
+  <view class="resume-item" wx:for="{{resumes}}" wx:key="index" bind:tap="gotolook" data-url="{{item.file_dir}}">
+    <view class="r-left">
+      <image wx:if="{{item.type == 'pdf'}}" src="https://cdn1.chinayarn.com/dsc/2020-11/img/XV6R3phphD6wZf1605165849201112.png" class="l-icon"/>
+      <image wx:elif="{{item.type == 'word'}}" src="https://cdn1.chinayarn.com/dsc/2020-11/img/3HcPRphpimzFjE1605165835201112.png" class="l-icon"/>
+      <image wx:if="{{item.type == 'other'}}" src="https://cdn1.chinayarn.com/dsc/2020-11/img/eEFvmphp5JjEGQ1605165510201112.png" class="l-icon"/>
+    </view>
+    <view class="r-center">
+      <view class="c-top">{{item.file_name}}</view>
+      <view class="c-bottom">{{item.time}}上传</view>
+    </view>
+    <view class="r-icon" catch:tap="deleteItem" data-id="{{item.id}}">
+      <image src="https://cdn1.chinayarn.com/dsc/2020-11/img/xKhCSphp5AV1RR1605166096201112.png" mode="widthFix"/>
+    </view>
+  </view>
+</view>
+<view class="nomore" wx:else>暂无简历，请上传...</view>
+
+<view class="upload-resume">
+  <view class="upload-btn" style="opacity: 0.7;" wx:if="{{resumes.length >= 3}}">已达到最大数量请删除后上传</view>
+  <view class="upload-btn" wx:else bind:tap="uploadvideoFun">上传附件简历</view>
+
+</view>

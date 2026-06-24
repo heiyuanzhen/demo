@@ -1,0 +1,33 @@
+<view class="job-hunting">
+
+	<block wx:if="{{jobhuntings.length > 0}}">
+		<block wx:for="{{jobhuntings}}" wx:key="index">
+			<side-slip catch:delete="deleteItem" data-id="{{item.id}}" data-index="{{index}}" isDelete="{{isDelete}}">
+				<view class="hunting-item" data-item="{{item}}" bind:tap="gotoEdit">
+					<view class="item-left">
+						<view class="l-name">{{item.catname}}</view>
+						<view class="l-xinzi">{{item.xinzivalue}}</view>
+					</view>
+					<view class="item-right">
+						<image src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" />
+					</view>
+				</view>
+			</side-slip>
+		</block>
+	</block>
+	<view wx:else style="width: 100%;padding: 20rpx 0;text-align: center;color:#bbb;">{{loadingtext}}</view>
+	<view class="add-hunting" bind:tap="gopath" data-url="/pages/ARencaiduan/addJobHunting/addJobHunting">
+		+添加求职意向
+	</view>
+</view>
+
+<picker range="{{situationOptions}}" range-key="name" data-key="situation" value="{{situationIndex}}"
+	bindchange="pickerChange">
+	<view class="job-status">
+		<view class="s-left">求职状态</view>
+		<view class="s-right">
+			<view class="s-text">{{situationOptions[situationIndex].name}}</view>
+			<image class="s-icon" src="https://cdn1.chinayarn.com/xcx/img2/index/jiantou_right.png" />
+		</view>
+	</view>
+</picker>

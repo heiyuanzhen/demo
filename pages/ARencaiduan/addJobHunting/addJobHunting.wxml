@@ -1,0 +1,13 @@
+<view class="container">
+	<FormItem type="select" label="岗位类别" placeholder="输入岗位类别" level="three"
+		bindthreeLevelPickerChange="threeLevelPickerChange" rangerObj="{{postselectData.catid}}" styleStr="width: 670rpx;"
+		threeLevelLabel="{{threeLevelLabel}}" threeLevelValue="{{threeLevelValue}}" />
+	<FormItem type="address" bindaddresschange="addresschange" address="{{address}}" />
+	<FormItem type="select" label="期望薪资" placeholder="输入期望薪资" isRequire="{{true}}" key="xinzi"
+		bindtwolevelPickerChange="twolevelPickerChange" rangeArr="{{postselectData.xinzi}}" styleStr="width: 670rpx"
+		oneLevelId="{{xinziId}}" />
+	<!-- <FormItem type="select" label="岗位性质" placeholder="输入岗位性质" isRequire="{{false}}" key="gzxz" bindtwolevelPickerChange="twolevelPickerChange" rangeArr="{{postselectData.gzxz}}" styleStr="width: 670rpx" oneLevelId="{{typeId}}" /> -->
+</view>
+<view class="upload-resume">
+	<view class="upload-btn" bind:tap="addJobHunting">{{saveText}}</view>
+</view>

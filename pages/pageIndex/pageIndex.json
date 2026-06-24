@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "boss-index": "/components/AQiyeduan/bossIndex/bossIndex",
+    "boss-mine": "/components/AQiyeduan/bossMine/bossMine",
+    "talent-index": "/components/ARencaiduan/talentIndex/talentIndex",
+    "talent-mine": "/components/ARencaiduan/talentMine/talentMine",
+    "privacy-popup": "../../components/privacyPopup/privacyPopup"
+
+  },
+  "navigationBarTitleText": "纺织人才",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
+}

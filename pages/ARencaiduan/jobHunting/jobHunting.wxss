@@ -1,0 +1,70 @@
+page{
+  background-color: #f6f6f6;
+}
+.item-right image{
+  width: 12rpx;
+  height: 20rpx;
+  margin-right: 80rpx;
+}
+
+.job-hunting{
+  background-color: #fff;
+  padding: 0 40rpx 30rpx 40rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.hunting-item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #ececec;
+  padding: 30rpx 0;
+}
+.item-left{
+  display: block; 
+}
+.l-name{
+  font-size: 32rpx;
+  color: #444444;
+}
+.l-xinzi{
+  font-style: 28rpx;
+  color: #a8adbf;
+}
+.add-hunting{
+  border: 2rpx dashed #26BA8D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #26BA8D;
+  font-size: 32rpx;
+  height: 150rpx;
+  margin-top: 40rpx;
+}
+.job-status{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 40rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.s-text{
+  color: #a8adbf;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.s-left{
+  font-size: 32rpx;
+}
+.s-right{
+  display: flex;
+  align-items: center;
+  color: #a8adbf;
+  font-size: 30rpx;
+}
+.s-icon{
+  width: 12rpx;
+  height: 20rpx;
+}

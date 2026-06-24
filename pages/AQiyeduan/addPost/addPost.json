@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "FormItem": "/components/AQiyeduan/FormItem/FormItem"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "添加岗位",
+  "backgroundColor": "#ffffff"
+}

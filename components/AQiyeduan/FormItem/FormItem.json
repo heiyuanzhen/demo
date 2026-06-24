@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "z-Eeditor":"/components/z-Eeditor/z-editor"
+  }
+}

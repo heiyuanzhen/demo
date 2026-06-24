@@ -1,0 +1,67 @@
+
+.img{
+    /* transition:all .5s linear 0s; */
+  }
+  
+  .swiper-item{
+    width: 660rpx;
+    display: flex;
+    justify-content: center;
+  }
+  .bg-white image{
+    width: 100.3%;
+    height: 339rpx;
+    transform: translateY(-2px);
+  } 
+  
+  .bg-white{
+    background-color: #fff; 
+    width: 97.4%;
+    border-radius: 20rpx 20rpx 0 0;
+    overflow: hidden;
+  }
+  
+  
+  .sesonOpend{
+    margin-top: 20rpx;
+    background-size: 100% 30%;
+  }
+  
+  .swiper{
+    height: 1355rpx;
+  }
+  
+  .bg-color{
+    background-color: #26BA8D;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 170rpx;
+  }
+  
+  
+  .swpier-body{
+    padding: 35rpx 22rpx;
+    box-sizing: border-box;
+    color: #444444;
+  }
+  .swiper-title{
+    font-weight: bold;
+    font-size: 32rpx;
+    text-align: left;
+    margin-bottom: 30rpx;
+  }
+  .swiper-content_item{
+    font-size: 28rpx;
+    display: flex;  
+    justify-content: flex-start;
+  }
+  .con-num{
+    font-size: 26rpx;
+  }
+  .con-tent{
+    flex: 1;
+    font-size: 28rpx; 
+    text-align: left;
+  }

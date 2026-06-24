@@ -1,0 +1,193 @@
+page{
+  background-color: #fff;
+}
+.con-container{
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  background-color: #fff;
+  border-radius: 20rpx;
+  transform: translateY(-15rpx);
+  overflow: hidden;
+}
+.con-wrapper{
+  /* min-height: 100vh; */
+}
+
+/* 首页 推荐 最新 tab 的公共样式 */
+.content-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 40rpx 20rpx 40rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #ececec;
+  background-color: #fff;
+}
+.tab-lists{
+  color: #999999;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  width: 450rpx;
+}
+.tab-item:nth-child(1){
+  padding-right: 40rpx;
+}
+.tab-item:nth-child(2){
+  padding: 0 40rpx;
+  border-left: 1rpx solid #ececec;
+}
+.tab-item:nth-child(3){
+  padding: 0 40rpx;
+  border-left: 1rpx solid #ececec;
+}
+.tab-item_on{
+  color: #444444;
+  font-weight: bold;
+}
+.tab-order{
+  /* width: 270rpx; */
+  display: flex;
+  justify-content: space-between;
+}
+.order-item{
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rpx 18rpx;
+  font-size: 26rpx;
+  color: #999999;
+  margin-left: 10rpx;
+}
+.order-img{
+  margin-left: 10rpx;
+  width: 13rpx;
+  height: 10rpx;
+}
+
+.talent-list{
+  /* min-height: 60vh; */
+  /* padding-bottom: 130rpx; */
+}
+
+.darkeee{
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 10rpx;
+}
+
+.nomore{
+  width: 100%;
+  height: 50rpx;
+  background-color: transparent;
+  padding: 20rpx 0;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.fixed-btn .fixed-img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.fixed-btn{
+  position: fixed;
+  right: 30rpx;
+  bottom: 300rpx;
+  background-color: rbga(255,255,255,0.5);
+}
+
+.job-hunting{
+  background-color: #26BA8D;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+}
+.jobhunting-item{
+  text-align: center;
+  line-height: 50rpx;
+  height: 50rpx;
+  padding: 0 35rpx;
+}
+.job-text_on{
+  opacity: 1 !important;
+}
+.job-text{
+  color: #ffffff;
+  opacity: 0.7;
+  font-size: 28rpx;
+}
+
+.header-fixed{
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.banner{
+  z-index:999999;
+  background-color: #ffffff;
+ 
+}
+.mask_div{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.dialog{
+  position: relative;
+}
+.closeIcon{
+  position: absolute;
+  right: -35rpx;
+  top: -35rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+.radus{
+  width: 100%;
+  height: 150rpx;
+  background-color: #F6F6F6;
+  margin-top: -130rpx;
+}
+
+
+.banner_back {
+  position: absolute;
+  right: 0rpx;
+  bottom: -1rpx;
+  height: 46rpx;
+  width: 100%;
+}
+.dots {
+  position: absolute;
+  right: 30rpx;
+  bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots .dot {
+  margin: 0 5rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: all 0.6s;
+  font: 300 18rpx/28rpx "microsoft yahei";
+}
+
+.dots .dot_active {
+  background: #36ceb4;
+  color: #36ceb4;
+}

@@ -1,0 +1,51 @@
+	<block wx:if="{{!isstop}}">
+	<side-slip catch:delete="deleteItem" data-id="{{postItem.itemid}}"
+		data-index="{{index}}" isDelete="{{isDelete}}">
+		<view class="post-item">
+			<view class="item-top">
+				<view class="post-name">{{postItem.title}}</view>
+				<view class="post-gz">{{postItem.xinzi || '面议'}}</view>
+			</view>
+			<view class="item-center">
+				<view class="fl-item" wx:if="{{postItem.catid && postItem.catid != '不限'}}">{{postItem.catid}}</view>
+				<view class="fl-item" wx:if="{{postItem.age && postItem.age != '不限'}}">{{postItem.age}}</view>
+				<view class="fl-item" wx:if="{{postItem.experience}}">
+					{{postItem.experience == '0年' ? '经验不限' : postItem.experience}}</view>
+			</view>
+			<view class="item-bottom" wx:if="{{!isEdit}}">
+				<view class="gs-mc">{{postItem.company}}</view>
+				<view class="db-sj">{{postItem.address}}</view>
+			</view>
+			<view class="item-bottom" wx:if="{{isEdit}}">
+				<view class="db-sj">{{postItem.address}}</view>
+				<view class="btn-group">
+					<!-- <view
+				 class="btn-cls"
+				 catch:tap="deleteItem"
+				 data-id="{{postItem.itemid}}"
+				>删除
+				</view> -->
+					<view class="btn-cls" catch:tap="gotoEdit" data-id="{{postItem.itemid}}">编辑</view>
+				</view>
+			</view>
+		</view>
+	</side-slip>
+</block>
+
+<block wx:if="{{isstop}}">
+	<view class="post-item">
+		<view class="item-top">
+			<view class="post-name isstop">{{postItem.title}}</view>
+			<view class="post-gz isstop">停止招聘</view>
+		</view>
+		<view class="item-center">
+			<view class="fl-item isstop">{{postItem.catid}}</view>
+			<view class="fl-item isstop">{{postItem.age}}</view>
+			<view class="fl-item isstop">{{postItem.peolepnum}}</view>
+		</view>
+		<view class="item-bottom" wx:if="{{!isEdit}}">
+			<view class="gs-mc">{{postItem.company}}</view>
+			<view class="db-sj">{{postItem.edittime}}</view>
+		</view>
+	</view>
+</block>

@@ -1,0 +1,33 @@
+<!-- "tabBar": {
+    "color": "#444444",
+    "selectedColor": "#26BA8D",
+    "list": [
+      {
+        "iconPath": "images/footbar/tab_home.png",
+        "selectedIconPath": "images/footbar/tab_home_pre.png",
+        "pagePath": "pages/index/index",
+        "text": "人才信息"
+      },
+      {
+        "iconPath": "images/footbar/cyj333.png",
+        "selectedIconPath": "images/footbar/cyj222.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  } -->
+<view class="tabbar-container" id="tabbarContainer">
+  <view class="tabbar-list">
+    <block wx:for="{{tabbarList}}" wx:key="index">
+      <!--
+        <view class="tabbar-item {{currentTabIndex == (index + 1)}}" data-index="{{index}}" bindtap="clickTabbar">
+      -->
+      <view class="tabbar-item" data-index="{{index}}" bindtap="clickTabbar" data-page="{{item.page}}">
+        <view class="tabbar-icon">
+          <image src="{{currentTabIndex == (index + 1) ? item.icon_on : item.icon }}" class="image" mode="widthFix"/>
+        </view>
+        <view class="{{currentTabIndex == (index + 1) ? 'tabbar-text_on' : 'tabbar-text' }}">{{item.text}}</view>
+      </view>
+    </block>
+  </view>
+</view>

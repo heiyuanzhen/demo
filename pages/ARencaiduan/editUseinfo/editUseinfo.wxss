@@ -1,0 +1,5 @@
+@import "../editInfo_talent//editInfo_talent.wxss";
+
+.form-container {
+  padding-bottom: 50rpx;
+}

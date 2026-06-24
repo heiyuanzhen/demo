@@ -1,0 +1,35 @@
+.container{
+  padding: 40rpx 40rpx 15rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.d-flex{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upload-resume{
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8rpx 0;
+}
+.upload-btn{
+  width: 670rpx;
+  height: 82rpx;
+  background-color: #26BA8D;
+  border-radius: 70rpx;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 82rpx;
+}

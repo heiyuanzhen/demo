@@ -1,0 +1,38 @@
+<view class="container-con">
+  <scroll-view class="left-list left-list_dark" wx:if="{{cityListOne.length}}" scroll-y="{{true}}">
+    <view class="left-item {{item.isOn ? 'left-item_on' : null}}" wx:for="{{cityListOne}}" bindtap="cityoneChange" data-ison="{{item.isOn}}" data-index="1" data-id="{{item.id}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <view class="left-list left-list_dark" wx:else>
+    <view class="plaseChoose">
+      请选择省份（市）...
+    </view>
+  </view>
+  <scroll-view class="left-list left-list_white" wx:if="{{cityListTwo.length}}" scroll-y="{{true}}">
+    <view class="left-item {{item.isOn ? 'left-item_on' : null}}" wx:for="{{cityListTwo}}" bindtap="citytwoChange" data-ison="{{item.isOn}}" data-index="2" data-id="{{item.id}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <view class="left-list left-list_white" wx:else>
+    <view class="plaseChoose">
+      请选择城市（区）...
+    </view>
+  </view>
+  <scroll-view class="left-list left-list_white" wx:if="{{cityListThree.length}}" scroll-y="{{true}}">
+    <view class="left-item {{item.isOn ? 'left-item_on' : null}}" wx:for="{{cityListThree}}" bindtap="citythreeChange" data-ison="{{item.isOn}}" data-index="3" data-id="{{item.id}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <view class="left-list left-list_white" wx:else>
+    <view class="plaseChoose">
+      请选择城镇（村）...
+    </view>
+  </view>  
+
+  <view class="bottomsub" bindtap="gobackindexWithQuery">
+    <button class="save-btn">确定</button>
+  </view>
+</view>
+
+

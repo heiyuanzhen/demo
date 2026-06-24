@@ -1,0 +1,19 @@
+<view class="address" style="background: #fff">
+  <FormItem type="address" address="{{['不限']}}" bind:addresschange="addresschange" isRequire="{{false}}"
+    styleStr="margin: 20rpx 30rpx;" fw="{{true}}" />
+</view>
+
+<view class="address">
+  <FormItem type="select" label="岗位要求" placeholder="输入岗位类别" level="three"
+    bindthreeLevelPickerChange="threeLevelPickerChange" rangerObj="{{postselectData.catid}}" styleStr="width: 670rpx;"
+    threeLevelLabel="{{threeLevelLabel}}" threeLevelValue="{{threeLevelValue}}" isRequire="{{false}}" istype="{{true}}"/>
+</view>
+<block wx:for="{{queryList}}" wx:for-item="queryItem" wx::key="index">
+  <query-item bindqueryitemChange="queryitemChange" queryItem="{{queryItem}}" data-index="{{index}}"></query-item>
+</block>
+
+<view class="bottom-space"></view>
+<view class="btn-group">
+  <view class="btn-cz" bindtap="clearAll">重置</view>
+  <view class="btn-qd" bindtap="confirmSel">确定</view>
+</view>

@@ -1,0 +1,31 @@
+
+.fixed-btn{
+  position: fixed;
+  bottom: 0;
+}
+.btn-bg{
+  background-color: #fff;
+  width: 100%;
+  padding-top: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10rpx;
+  z-index: 300;
+
+}
+.btn-primary{
+  background-color: #26BA8D;
+  flex: 1;
+  color: #fff;
+  border-radius: 40rpx;
+  font-weight: 500;
+  font-size: 30rpx;
+  margin: 0 40rpx;
+}
+
+.normal-btn{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

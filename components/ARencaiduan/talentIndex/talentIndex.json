@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "IndexComp": "/components/IndexComp/IndexComp",
+    "postItem": "/components/AQiyeduan/postItem/postItem",
+    "banners":"/components/banners/banners"
+
+  }
+}

@@ -1,0 +1,25 @@
+<!-- <swiper class='ad-swiper' style="height: 200rpx; width: 690rpx" indicator-dots="{{banner.length > 1}}" autoplay="true" circular='true' wx:if='{{banner.length > 0}}' indicator-color="#FFFFFF" indicator-active-color="#26BA8D">
+  <block wx:for="{{banner}}" wx:key='index'>
+    <swiper-item>
+      <image src='{{item.image}}' bindtap='viewDetail' data-linktype='{{item.link_type}}' data-linkurl='{{item.link_url}}' data-appid='{{item.appid}}' data-position='7' data-title='{{item.title}}' data-id='{{item.id}}' class="slide-image" mode='aspectFill' />
+    </swiper-item>
+  </block>
+</swiper> -->
+
+<view style='width:100%;height:435rpx;position: relative;'>
+  <swiper bindchange="swiperCurrentchang" style='width: 100%;height:435rpx;background:{{color[swiperCurrent%4]}}'
+    circular="true" autoplay='3000' duration="1000">
+    <block wx:key="index" wx:for='{{banner}}'>
+      <swiper-item>
+        <image style='width: 100%;height:100%;' bindtap='viewDetail' data-appid="{{item.appid}}" data-type="{{item.type}}" data-linkurl='{{item.link_url}}'
+          src='{{item.image}}' mode='widthFix' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class='banner_back' src='https://cdn1.chinayarn.com/xcx/img2/index/banner_back.png'></image>
+  <view class="dots" wx:if="{{banner.length>1}}">
+    <block wx:for="{{banner}}" wx:key="index">
+      <view class="dot {{index == current ? 'dot_active' : ''}}"></view>
+    </block>
+  </view>
+</view>

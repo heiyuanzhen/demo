@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "navigationBarBackgroundColor": "#26BA8D",
+  "navigationBarTextStyle": "white",
+"usingComponents": {
+    "FormItem": "/components/AQiyeduan/FormItem/FormItem"
+  },
+  "navigationBarTitleText": "添加求职意向"
+
+}

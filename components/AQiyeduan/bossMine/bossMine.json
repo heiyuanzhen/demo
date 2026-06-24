@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "talent": "/components/ARencaiduan/talent/talent"
+  }
+}

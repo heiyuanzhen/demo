@@ -1,0 +1,141 @@
+<view wx:if="{{resumeDetail.itemid}}" class="detail">
+  <view class="user-info">
+    <view>
+      <view class="user-name">{{resumeDetail.truename || '暂未填写'}}</view>
+      <view class="user-work_time" wx:if="{{resumeDetail.experience !== ''}}">
+        {{resumeDetail.experience == 0 ? '': '工作经验:'+resumeDetail.experience+'年'}}
+      </view>
+    </view>
+    <view class="user-avatar">
+      <image src="{{resumeDetail.thumb || 'https://cdn1.chinayarn.com/dsc/2021-04/img/4LA4HphphKDzlw1618543118210416.png'}}" class="user-avatar_img" />
+    </view>
+  </view>
+  <view class="modlue-item">
+    <view class="modlue-title">
+      <view class="title-icon"></view>
+      <view class="title-text">求职期望</view>
+    </view>
+    <view class="form-item">
+      <!-- <view wx:if="{{resumeDetail.title}}">求职岗位：{{resumeDetail.title}}</view> -->
+      <!-- <view wx:if="{{resumeDetail.major}}">行业意向：{{resumeDetail.major}}</view> -->
+      <view wx:if="{{resumeDetail.catname}}">岗位类别：{{resumeDetail.catname}}</view>
+      <view style="color: #2CB38A;font-weight: bold;" wx:if="{{resumeDetail.xinzi}}">
+        期望薪资：{{resumeDetail.xinzi}}
+      </view>
+      <!-- <view wx:if="{{resumeDetail.typename}}">工作性质：{{resumeDetail.typename}}</view> -->
+      <view wx:if="{{resumeDetail.skill}}">专业特长：{{resumeDetail.skill}}</view>
+    </view>
+  </view>
+  <view class="modlue-item">
+    <view class="modlue-title">
+      <view class="title-icon"></view>
+      <view class="title-text">基本信息</view>
+    </view>
+    <view class="form-item">
+      <!-- <view wx:if="{{resumeDetail.birthday}}">出生年月：{{resumeDetail.birthday}}</view> -->
+      <view wx:if="{{resumeDetail.gendername}}">性别：{{resumeDetail.gendername}}</view>
+      <!-- <view wx:if="{{resumeDetail.height}}">身高：{{resumeDetail.height+'cm' }}</view>
+			<view wx:if="{{resumeDetail.weight}}">体重：{{resumeDetail.weight+'kg'}}</view> -->
+      <view wx:if="{{resumeDetail.address}}">现居住地：{{resumeDetail.address}}</view>
+      <!-- <view wx:if="{{resumeDetail.marriagename}}">婚姻状况：{{resumeDetail.marriagename}}</view> -->
+      <view wx:if="{{resumeDetail.educationname}}">最高学历：{{resumeDetail.educationname}}</view>
+      <view wx:if="{{resumeDetail.major}}">专业：{{resumeDetail.major}}</view>
+      <view wx:if="{{resumeDetail.school}}">毕业院校：{{resumeDetail.school}}</view>
+    </view>
+  </view>
+  <view class="modlue-item" wx:if="{{resumeDetail.stulist}}">
+    <view class="modlue-title">
+      <view class="title-icon"></view>
+      <view class="title-text">学习经历</view>
+    </view>
+    <view class="form-content">
+      <view class="form-content_value">
+        <z-editor value="{{resumeDetail.stulist}}" isEdit="{{false}}" isScroll="{{false}}" editorHeight="{{showList[0].isAll ? 'auto' : 75}}"></z-editor>
+      </view>
+      <view class="form-content_getall" bindtap="toggleShoAll" data-index="{{0}}" wx:if="{{resumeDetail.stulistLength > 60}}">
+        {{showList[0].isAll ? '[收起]' : '[查看全部]'}}
+      </view>
+    </view>
+  </view>
+  <view class="modlue-item" wx:if="{{resumeDetail.worklist}}">
+    <view class="modlue-title">
+      <view class="title-icon"></view>
+      <view class="title-text">工作经历</view>
+    </view>
+    <view class="form-content">
+      <view class="form-content_value">
+        <z-editor value="{{resumeDetail.worklist}}" isEdit="{{false}}" isScroll="{{false}}" editorHeight="{{showList[1].isAll ? 'auto' : 75}}"></z-editor>
+      </view>
+      <view class="form-content_getall" bindtap="toggleShoAll" data-index="{{1}}" wx:if="{{resumeDetail.worklistLength > 60}}">
+        {{showList[1].isAll ? '[收起]' : '[查看全部]'}}
+      </view>
+    </view>
+  </view>
+  <view class="modlue-item" wx:if="{{resumeDetail.introduce}}">
+    <view class="modlue-title">
+      <view class="title-icon"></view>
+      <view class="title-text">自我鉴定</view>
+    </view>
+    <view class="form-content">
+      <view class="form-content_value">
+        <z-editor value="{{resumeDetail.introduce}}" isEdit="{{false}}" isScroll="{{false}}" editorHeight="{{showList[2].isAll ? 'auto' : 75}}"></z-editor>
+      </view>
+      <view class="form-content_getall" bindtap="toggleShoAll" data-index="{{2}}" wx:if="{{resumeDetail.introduceLength > 60}}">
+        {{showList[2].isAll ? '[收起]' : '[查看全部]'}}
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="fixed-btn">
+				<button class="fixed-btn_btn" bindtap="sendMessage" data-phone="{{resumeDetail.mobile}}" wx:if="{{!ismyself}}">
+						立即沟通
+				</button>
+		</view> -->
+
+  <view class="fix">
+    <z-fixbutton bindtap="gopath" data-url="/pages/ARencaiduan/editInfo_talent/editInfo_talent" wx:if="{{frompath == 'minepage'}}">编辑</z-fixbutton>
+    <z-fixbutton bindtap="sendMessage" data-phone="{{resumeDetail.mobile}}" wx:else>立即沟通</z-fixbutton>
+  </view>
+
+  <view class="fixed-star_share">
+    <block wx:if="{{frompath != 'minepage'}}">
+      <view class="star-share s-normal" bindtap="clickIconTap" wx:if="{{!resumeDetail.iscollection}}">
+        <image class="ss-icon" src="https://cdn1.chinayarn.com/dsc/2020-10/img/nSUOqphpIlO0b81603160020201020.png" mode="widthFix" />
+        <!-- <view class="ss-text">收藏</view> -->
+      </view>
+      <view class="star-share s-isstar" bindtap="clickIconTap" wx:else>
+        <image class="ss-icon" src="https://cdn1.chinayarn.com/dsc/2020-10/img/WoB8cphpFtzXW01603160055201020.png" mode="widthFix" />
+        <!-- <view class="ss-text">已收藏</view> -->
+      </view>
+    </block>
+    <view class="star-share s-normal">
+      <button class="btn-share" open-type="share">
+        <image class="ss-icon" src="https://cdn1.chinayarn.com/dsc/2020-10/img/n2dQ0phpF6cqfG1603160082201020.png" mode="widthFix" />
+      </button>
+      <!-- <view class="ss-text">转发</view> -->
+    </view>
+  </view>
+  <view class="mask_div" catchtouchmove="catchtap" wx:if="{{showDialog}}">
+    <view class="dialog">
+      <image src="https://cdn1.chinayarn.com/dsc/2021-02/img/ygwh2phpqA7A5s1613974604210222.png" bindtap="getOrderDetail" style="width:470rpx;height:600rpx;" mode="widthFix" />
+      <image src="https://cdn1.chinayarn.com/xcx/img2/index/222.png" class="closeIcon" mode="widthFix" bindtap="toggleDialogShow" />
+      <view class="btn-group">
+        <view class="kaitong-btn btn-common" bind:tap="gopath" data-url="/pages/ARencaiduan/seasoncardOpened/seasoncardOpened">
+          开通季卡，更划算
+          <image class="icon-recommend" src="https://cdn1.chinayarn.com/dsc/2020-11/img/sj0jyphp8NaePS1606380894201126.png" mode="widthFix" />
+        </view>
+        <view class="dantiao-btn btn-common" bind:tap="buyOne">{{singlePrice}}元 购买单条</view>
+        <view class="callkfbig">
+          <!-- <view class="callkf" bindtap="callKf" data-phone="0571-82635788"> -->
+          <view class="callkf" bindtap="callKf" data-phone="15868185023">
+            <image src="https://cdn1.chinayarn.com/dsc/2021-02/img/sU2KQphp8Fg6k61613978964210222.png" mode="widthFix" />
+            <text>联系客服</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <loading></loading>
+</view>

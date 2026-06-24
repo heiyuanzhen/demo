@@ -1,0 +1,22 @@
+/* pages/ARencaiduan/furrowPassage/furrowPassage.wxss */
+.bottom-time{
+  font-size: 24rpx;
+  color: #a8adbf;
+  margin-left: 40rpx;
+  border-top: 2rpx solid #f6f6f6;
+  padding: 16rpx 0;
+}
+.container{
+  margin-bottom: 60rpx;
+  background-color: #fff;
+}
+page{
+  background-color: #f6f6f6;
+}
+
+.nomre{
+  color: #a8adbf;
+  width: 750rpx;
+  text-align: center;
+  padding: 30rpx 0;
+}
